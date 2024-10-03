@@ -17,6 +17,6 @@ The main content include, *e*.*g*.:
 ## About the author
 ***Caio Nicácio*** - Undergraduated Mechanical Engineering by the Maranhão State University (UEMA) and student-researcher focused in computer vision and numerical simulation.
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/caio-m-nicacio)
-[	![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](www.instagram.com/caio.nicc)
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/caio-m-nicacio)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](www.instagram.com/caio.nicc)
 
