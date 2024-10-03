@@ -18,5 +18,5 @@ The main content include, *e*.*g*.:
 ***Caio Nicácio*** - Undergraduated Mechanical Engineering by the Maranhão State University (UEMA) and student-researcher focused in computer vision and numerical simulation.
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/caio-m-nicacio)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](www.instagram.com/caio.nicc)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/caio.nicc)
 
