@@ -1,0 +1,22 @@
+# Arquivos temporários do LaTeX
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+
+# Arquivos de backup de editores
+*~          # Arquivos de backup do Emacs
+*.swp       # Arquivos de backup do Vim
+
+# Diretórios de saída (se houver)
+_build/
+latexmk/
+
+# Arquivos do TeXShop
+*.pdfsync
