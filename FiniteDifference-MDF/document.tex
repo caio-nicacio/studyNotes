@@ -47,4 +47,24 @@
 	\tableofcontents
 	\newpage
 	
+	\section{Polinômio de Taylor}
+	
+	Seja $f \in C^n$, $f:\mathbb{R} \to \mathbb{R}$, uma função diferenciável em $x_0$, $x,x_0 \in D_f$. O polinômio que melhor aproxima $f$ localmente, para todo $x$ na vizinhança de $x_0$, é descrito pela Eq. (\ref{eq:1}).
+	\begin{equation}
+		P_n(x)=f(x_0)+\sum_{n=0}^{k}\frac{f^{(n)}}{n!}(x-x_0)^n
+		\label{eq:1}
+	\end{equation}
+	Seja $f \in C^2$, $f:\mathbb{R} \to \mathbb{R}$, uma função diferenciável no intervalo $I$, $x,x_0 \in I$.
+	$$P_2(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2$$
+	O polinômio de Taylor de ordem 2 é a única função que goza da propriedade do erro $E_2(x)$ tender a zero mais rapidamente que $(x-x_0)^2$, tal que
+	$$\lim_{x \to x_0} \frac{E_2(x)}{(x-x_0)^2}=0\text{.}$$
+	Para valores de $\Delta x$ suficientemente pequenos, pode-se assumir que o termo quadrático é desprezível. Logo,
+	$$P(x)=f(x_0)+f'(x_0)(x-x_0)\text{,} \quad f'(x_0) \neq 0\text{,}$$
+	é a melhor aproximação local de $f$ em volta de $x_0$, quando $x \to x_0$. 
+	
+	Por definição, $P(x)=f(x)$, $\forall x \to x_0$. Portanto,
+	$$f(x)\approx f(x_0)+f'(x_0)(x-x_0)\text{.}$$
+	Isolando o termo diferencial $f'(x_0)$,
+	$$\left.\frac{df}{dx}\right|_{x_0}\approx \frac{f(x)-f(x_0)}{x-x_0}$$
+	para todo $x$ suficientemente próximo a $x_0$.
 \end{document}
