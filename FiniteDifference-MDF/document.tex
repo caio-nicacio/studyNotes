@@ -49,10 +49,10 @@
 	
 	\section{Polinômio de Taylor}
 	
-	Seja $f \in C^n$, $f:\mathbb{R} \to \mathbb{R}$, uma função diferenciável em $x_0$, $x,x_0 \in D_f$. O polinômio que melhor aproxima $f$ localmente, para todo $x$ na vizinhança de $x_0$, é descrito pela Eq. (\ref{eq:1}).
+	Seja $f \in C^n$, $f:\mathbb{R} \to \mathbb{R}$, uma função diferenciável em $x_0$, $x,x_0 \in D_f$. O polinômio que melhor aproxima $f$ localmente, para todo $x$ na vizinhança de $x_0$, é descrito pela Eq. (\ref{eq:01}).
 	\begin{equation}
 		P_n(x)=f(x_0)+\sum_{n=0}^{k}\frac{f^{(n)}}{n!}(x-x_0)^n
-		\label{eq:1}
+		\label{eq:01}
 	\end{equation}
 	Seja $f \in C^2$, $f:\mathbb{R} \to \mathbb{R}$, uma função diferenciável no intervalo $I$, $x,x_0 \in I$.
 	\begin{equation}
@@ -60,7 +60,7 @@
 		\label{eq:02}
 	\end{equation}
 	O polinômio de Taylor de ordem 2 é a única função que goza da propriedade do erro $E_2(x)$ tender a zero mais rapidamente que $(x-x_0)^2$, tal que
-	$$\lim_{x \to x_0} \frac{E_2(x)}{(x-x_0)^2}=0\text{,} \quad E_2(x)=o((x-x_0)^2)\text{.}$$
+	$$\lim_{x \to x_0} \frac{E_2(x)}{(x-x_0)^2}=0\text{,} \quad E_2(x)=o(\Delta x^2)\text{.}$$
 	Para valores de $\Delta x$ suficientemente pequenos, pode-se assumir que o termo quadrático é desprezível. Consequentemente,
 	$$P(x)=f(x_0)+f'(x_0)(x-x_0)\text{,} \quad f'(x_0) \neq 0\text{,}$$
 	é a melhor aproximação local de $f$ em volta de $x_0$, quando $x \to x_0$. 
@@ -72,26 +72,25 @@
 		\left.\frac{df}{dx}\right|_{x_0}\approx \frac{f(x)-f(x_0)}{x-x_0}
 		\label{eq:03}
 	\end{equation}
-	para todo $x$ suficientemente próximo a $x_0$.
 	
 	\subsection{Aproximação Local das Derivadas de Ordem Superior}
 	\label{sec:1.1}
-	O conceito que será apresentado é fundamental para o desenvolvimento da próxima seção, que introduz a aproximação local das derivadas de ordem $n$ de uma função real definida em um domínio $\Omega \subset \mathbb{R}^n$.
+	O conceito que será apresentado é fundamental para o desenvolvimento da próxima seção, que introduz a aproximação local das derivadas de ordem $n$ de uma função real definida em um domínio $\Omega \subseteq \mathbb{R}^n$.
 	
 	Seja $f \in C^{(n+1)}$, então a $n$-ésima derivada do polinômio  de Taylor de ordem $n$, $P_n^{(n)}(x)$, é uma boa aproximação local de $f^{(n)}(x)$ em volta de $x_0$. Por construção, portanto,
 	$$P_n^{(k)}(x_0)=f^{(k)}(x_0)\text{,}\quad  k=0,1,...,n\text{.}$$
-	Logo, para todo $x$ suficientemente próximo a $x_0$, $P_n^{(k)}(x)\approx f^{(k)}(x)$.
+	Para todo $x$ suficientemente próximo a $x_0$, $P_n^{(k)}(x)\approx f^{(k)}(x)$.
 	O erro na aproximação da derivada $f^{(n)}(x)$ por $P_n^{(n)}(x)$ é:
 	$$f^{(k)}(x)-P_n^{(k)}(x)=E_n^{(k)}(x)\text{.}$$
-	Seja $f \in C^{(k+1)}$, então, pela forma de Lagrange do erro.
-	$$E_n(x)=\frac{f^{(k+1)}(\xi)}{(k+1)!}(x-x_0)^{k+1}\text{,}\quad \xi \in (x_0,x)$$
+	Seja $f \in C^{(k+1)}$, então, pela forma de Lagrange do erro:
+	$$E_n(x)=\frac{f^{(k+1)}(\xi)}{(k+1)!}(x-x_0)^{k+1}\text{,}\quad \xi \in (x_0,x)\text{.}$$
 	Derivando $n$ vezes,
-	$$E_n^{(k)}=\frac{d^k}{dx^k} \left[\frac{f^{(k+1)}(\xi)}{(k+1)!}(x-x_0)^{k+1}\right]$$
+	$$E_n^{(k)}(x)=\frac{d^k}{dx^k} \left[\frac{f^{(k+1)}(\xi)}{(k+1)!}(x-x_0)^{k+1}\right]$$
 	$$\frac{d^k}{dx^k}(x-x_0)^{k+1}=\frac{(k+1)!}{1!}(x-x_0)\text{.}$$
 	Logo,
 	$$E_n^{(k)}(x)=f^{(k+1)}(\xi)\cdot (x-x_0)$$
 	
-	É possível concluir, portanto, que a $n$-ésima derivada de $P_n(x)$ é uma boa aproximação da $n$-ésima derivada da função $f(x)$, de modo que $E_n^{(n)}=o(x-x_0)$.
+	É possível concluir, portanto, que a $n$-ésima derivada de $P_n(x)$ é uma boa aproximação da $n$-ésima derivada da função $f(x)$, de modo que $E_n^{(n)}=o(\Delta x)$.
 	
 	\section{Método das Diferenças Finitas}
 	\begin{figure}[h!]
@@ -100,10 +99,28 @@
 		\caption{Ampliação de um nó interno em uma malha bidimensional.}
 		\label{fig:malha}
 	\end{figure}
-	Seja $(m,n)$ um ponto central de uma malha de um domínio discretizado $\Omega$, de uma função real $f:\mathbb{R} \to \mathbb{R}^2$ (Fig. \ref{fig:malha}). A variação dos valores intermediários entre $(m,n)$ e os demais pontos é análoga à Eq. (\ref{eq:03}). Assim:
+	Seja $(m,n)$ um ponto central em uma malha de um domínio discretizado $\Omega \subseteq \mathbb{R}^2$, de uma função real $f:\mathbb{R} \to \mathbb{R}^2$ (Fig. \ref{fig:malha}). A variação dos valores intermediários entre $(m,n)$ e os demais pontos é análoga à Eq. (\ref{eq:03}). Assim,
 	$$\left.\frac{\partial f}{\partial x}\right|_{m+\frac{1}{2},n}\approx \frac{f_{m+1,n}-f_{m,n}}{\Delta x}\qquad \left.\frac{\partial f}{\partial x}\right|_{m-\frac{1}{2},n}\approx \frac{f_{m,n}-f_{m-1,n}}{\Delta x}$$
 	$$\left.\frac{\partial f}{\partial y}\right|_{m,n+\frac{1}{2}}\approx \frac{f_{m,n+1}-f_{m,n}}{\Delta y}\qquad \left.\frac{\partial f}{\partial y}\right|_{m,n-\frac{1}{2}}\approx \frac{f_{m,n}-f_{m,n-1}}{\Delta y}$$
 	É possível, como provado na Seção \ref{sec:1.1}, aproximar derivadas de ordem $k$, $k>1$, de uma função $f:\mathbb{R} \to \mathbb{R}^n$ derivando $P(x)$, $\forall x \to x_0$.
-	$$\left.\frac{\partial^2 f}{\partial x^2}\right|_{m,n} \approx \frac{\left.\frac{\partial f}{\partial x}\right|_{m+\frac{1}{2},n}-\left.\frac{\partial f}{\partial x}\right|_{m-\frac{1}{2},n}}{\Delta x}$$
-	$$\left.\frac{\partial^2 f}{\partial y^2}\right|_{m,n} \approx \frac{\left.\frac{\partial f}{\partial y}\right|_{m,n+\frac{1}{2}}-\left.\frac{\partial f}{\partial y}\right|_{m,n-\frac{1}{2}}}{\Delta y}$$
+	$$\left.\frac{\partial^2 f}{\partial x^2}\right|_{m,n} \approx \frac{\left.\frac{\partial f}{\partial x}\right|_{m+\frac{1}{2},n}-\left.\frac{\partial f}{\partial x}\right|_{m-\frac{1}{2},n}}{\Delta x}=\frac{f_{m+1,n}+f_{m-1,n}-2f_{m,n}}{\Delta x^2}$$
+	$$\left.\frac{\partial^2 f}{\partial y^2}\right|_{m,n} \approx \frac{\left.\frac{\partial f}{\partial y}\right|_{m,n+\frac{1}{2}}-\left.\frac{\partial f}{\partial y}\right|_{m,n-\frac{1}{2}}}{\Delta y}=\frac{f_{m,n+1}+f_{m,n-1}-2f_{m,n}}{\Delta y^2}$$
+	
+	\subsection{MDF Aplicado à Condução de Calor em Regime Permanente}
+	
+	A condução de calor em que $T=f(x,y)$ é governada pela Eq. (\ref{eq:04}).
+	\begin{equation}
+		\frac{\partial T}{\partial t}=\alpha \nabla^2 T
+		\label{eq:04}
+	\end{equation}
+	Assumindo que a condução ocorre em regime permanente, sem potenciais motrizes, a equação reduz-se à Eq. (\ref{eq:05})\footnote{Denominada Equação de Laplace para condução de calor.}.
+	\begin{equation}
+		\frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} = 0
+		\label{eq:05}
+	\end{equation}
+	Aplicando o MDF, temos:
+	$$\frac{T_{m+1,n}+T_{m-1,n}-2T_{m,n}}{\Delta x^2}+\frac{T_{m,n+1}+T_{m,n-1}-2T_{m,n}}{\Delta y^2}=0$$
+	$$\left(\frac{2}{\Delta x^2}+\frac{2}{\Delta y^2}\right)T_{m,n}=\frac{1}{\Delta x^2}\left(T_{m+1,n}+T_{m-1,n}\right)+\frac{1}{\Delta y^2}\left(T_{m,n+1}+T_{m,n-1}\right)$$
+	
+	$$A\cdot T_{m,n}=B\cdot \left(T_{m+1,n}+T_{m-1,n}\right)+C\cdot \left(T_{m,n+1}+T_{m,n-1}\right)\text{,}\quad A,B,C \in \mathbb{R}$$
 \end{document}
