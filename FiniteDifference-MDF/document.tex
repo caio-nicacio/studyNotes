@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 % --------------------
 % PACOTES ESSENCIAIS
@@ -118,9 +118,40 @@
 		\frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} = 0
 		\label{eq:05}
 	\end{equation}
-	Aplicando o MDF, temos:
+	Discretizando pelo MDF, temos:
 	$$\frac{T_{m+1,n}+T_{m-1,n}-2T_{m,n}}{\Delta x^2}+\frac{T_{m,n+1}+T_{m,n-1}-2T_{m,n}}{\Delta y^2}=0$$
 	$$\left(\frac{2}{\Delta x^2}+\frac{2}{\Delta y^2}\right)T_{m,n}=\frac{1}{\Delta x^2}\left(T_{m+1,n}+T_{m-1,n}\right)+\frac{1}{\Delta y^2}\left(T_{m,n+1}+T_{m,n-1}\right)$$
 	
-	$$A\cdot T_{m,n}=B\cdot \left(T_{m+1,n}+T_{m-1,n}\right)+C\cdot \left(T_{m,n+1}+T_{m,n-1}\right)\text{,}\quad A,B,C \in \mathbb{R}$$
+	\begin{equation}
+		A\cdot T_{m,n}=B\cdot \left(T_{m+1,n}+T_{m-1,n}\right)+C\cdot \left(T_{m,n+1}+T_{m,n-1}\right)\text{,}\quad A,B,C \in \mathbb{R}
+		\label{eq:06}
+	\end{equation}
+
+	A Eq. (\ref{eq:06}) conduz a um sistema linear para a solução da temperatura em cada ponto $(m,n) \in \Omega$, uma vez que há dependência linear para cada componente. Consequentemente,
+	\[
+	\mathbf{A}\cdot \mathbf{T} = 
+	\begin{bmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n} \\
+		a_{21} & a_{22} & \cdots & a_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{n1} & a_{n2} & \cdots & a_{nn}
+	\end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+		T_1 \\
+		T_2 \\
+		\vdots \\
+		T_n
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		b_1 \\
+		b_2 \\
+		\vdots \\
+		b_n
+	\end{bmatrix}
+	=
+	\mathbf{B}\text{,}
+	\]
+	em que $\mathbf{A} \in \mathbb{M}_{n,n}(\mathbb{R})$ é a matriz do coeficientes\footnote{Inclusos $A,B,C \in \mathbb{R}$.}, $\mathbf{T} \in \mathbb{R}^n$ representa os valores a serem determinados, e $\mathbf{B} \in \mathbb{R}^n$ é a matriz do termos independentes, o qual estão inclusas as condições de contorno do problema.
 \end{document}
