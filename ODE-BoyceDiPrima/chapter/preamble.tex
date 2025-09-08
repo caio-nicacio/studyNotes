@@ -1,0 +1,37 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{comment}
+\geometry{margin=2.5cm}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+
+\newcounter{solutioncounter}
+\renewcommand{\thesolutioncounter}{\arabic{solutioncounter}}
+
+\makeatletter
+\@addtoreset{solutioncounter}{chapter}
+\makeatother
+
+\newenvironment{solution}{
+  \refstepcounter{solutioncounter}
+  \par\noindent\textbf{\thesolutioncounter:}\par
+}{
+  \hfill$\blacksquare$\par
+}
+
+\newenvironment{solparts}
+{\begin{enumerate}\renewcommand{\labelenumi}{(\alph{enumi})}}
+{\end{enumerate}}

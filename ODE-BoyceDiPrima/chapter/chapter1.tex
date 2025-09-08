@@ -1,0 +1,638 @@
+\chapter{Introduction}
+\section{Some Basic Mathematical Models; Direction Fields}
+\pagebreak
+\section{Solutions of Some Differential Equations}
+
+\begin{comment}
+	\begin{solution}
+		\begin{gather*}
+			\frac{dy}{dt}=-y+5\text{,}\quad y(0)=y_0\\
+			-\frac{dy}{dt}=-y+5\\
+			-\frac{1}{y-5}\frac{dy}{dt}=-1\\
+			\frac{d}{dt}\ln |y-5|=-1\\
+			-\int \frac{d}{dt}\ln |y-5| \, dt=-\int dt\\
+			\ln |y-5|=t+K_1\\
+			e^{\ln |y-5|}=K_2 e^t\\
+			\boxed{y(t)=5+K_2 e^t, \quad K_2 \neq 0}
+		\end{gather*}
+	\end{solution}
+	
+	\begin{solution}
+		\begin{gather*}
+			\frac{dy}{dt}=-2y+5,\quad y(0)=y_0\\
+			-\frac{1}{2}\frac{dy}{dt}=y-\frac{5}{2}\\
+			\frac{1}{y-\frac{5}{2}}\frac{dy}{dx}=-2\\
+			\frac{d}{dt}\ln|y-\frac{5}{2}|=-2\\
+			\int \frac{d}{dt}\ln|y-\frac{5}{2}| \, dt = -2\int dt\\
+			\ln|y-\frac{5}{2}|=-2t + K_1\\
+			e^{\ln|y-\frac{5}{2}|}=K_2 e^{-2t}\\
+			y(t)=\frac{5}{2}+K_2 e^{-2t}\\
+			y_0=\frac{5}{2}+K_2 \quad \therefore \quad K_2=y_0-\frac{5}{2}\\
+			\boxed{y(t)=\frac{5}{2}+\left(y_0 -\frac{5}{2}\right)e^{-2t}}
+		\end{gather*}
+	\end{solution}
+\end{comment}
+
+\begin{solution}
+	\begin{solparts}
+		\item 
+		\begin{gather*}
+			\frac{dy}{dt}=-y+5\text{,}\quad y(0)=y_0\\
+			-\frac{dy}{dt}=-y+5\\
+			-\frac{1}{y-5}\frac{dy}{dt}=-1\\
+			\frac{d}{dt}\ln |y-5|=-1\\
+			-\int \frac{d}{dt}\ln |y-5| \, dt=-\int dt\\
+			\ln |y-5|=t+K_1\\
+			e^{\ln |y-5|}=K_2 e^t\\
+			\boxed{y(t)=5+K_2 e^t, \quad K_2 \neq 0}
+		\end{gather*}
+		
+		\item
+		\begin{gather*}
+			\frac{dy}{dt}=-2y+5,\quad y(0)=y_0\\
+			-\frac{1}{2}\frac{dy}{dt}=y-\frac{5}{2}\\
+			\frac{1}{y-\frac{5}{2}}\frac{dy}{dx}=-2\\
+			\frac{d}{dt}\ln|y-\frac{5}{2}|=-2\\
+			\int \frac{d}{dt}\ln|y-\frac{5}{2}| \, dt = -2\int dt\\
+			\ln|y-\frac{5}{2}|=-2t + K_1\\
+			e^{\ln|y-\frac{5}{2}|}=K_2 e^{-2t}\\
+			y(t)=\frac{5}{2}+K_2 e^{-2t}
+		\end{gather*}
+			Solving the initial value problem:
+		\begin{gather*}	
+			y_0=\frac{5}{2}+K_2 \quad \therefore \quad K_2=y_0-\frac{5}{2}\\
+			\boxed{y(t)=\frac{5}{2}+\left(y_0 -\frac{5}{2}\right)e^{-2t}}
+		\end{gather*}
+		\item
+		\begin{gather*}
+			\frac{dy}{dt}=-2y+10\\
+			\boxed{y(t)=5+(y_0-5)e^{-2t}}\footnotemark
+		\end{gather*}
+		\footnotetext{The process itself is similar to the previous one in which the constant value is the only relevant modification.}
+	\end{solparts}
+\end{solution}
+\pagebreak
+\begin{solution}
+	\begin{solparts}
+		\item
+		\begin{gather*}
+			\frac{dy}{dt}=y-5, \quad y(0)=y_0\\
+			\frac{1}{y-5}\frac{dy}{dt}=1 \quad \therefore \quad \frac{d}{dt}\ln|y-5|=1\\
+			\int \frac{d}{dt}\ln|y-5| \, dt=\int dt \quad \therefore \quad \ln|y-5|=t+K_1\\
+			e^{\ln|y-5|}=K_2e^t\\
+			y(t)=5+K_2e^t,\quad K_2 \neq 0
+		\end{gather*}
+			Solving the initial value problem:
+		\begin{gather*}
+			y_0=5+K_2 \quad \therefore \quad K_2=y_0-5\\
+			\boxed{y(t)=5+(y_0-5)e^t}
+		\end{gather*}
+		
+		\item 
+		\begin{gather*}
+			\frac{dy}{dt}=2y-5, \quad y(0)=y_0\\
+			\frac{1}{2}\frac{dy}{dt}=y-\frac{5}{2}\quad \therefore \quad \frac{1}{y-\frac{5}{2}}\frac{dy}{dt}=2\\
+			\frac{d}{dt}\ln\left|y-\frac{5}{2}\right|=2 \quad \therefore \quad \int \frac{d}{dt}\ln\left|y-\frac{5}{2}\right|\, dt=2\int dt\\
+			\ln\left|y-\frac{5}{2}\right|=2t+K_1\\
+			e^{\ln\left|y-\frac{5}{2}\right|}=K_2e^{2t}\\
+			y(t)=\frac{5}{2}+K_2e^{2t}, \quad K_2 \neq 0
+		\end{gather*}
+			Solving the initial value problem:
+		\begin{gather*}	
+			y_0=\frac{5}{2}+K_2 \quad \therefore \quad K_2=y_0-\frac{5}{2}\\
+			\boxed{y(t)=\frac{5}{2}+\left(y_0-\frac{5}{2}\right)e^{2t}}
+		\end{gather*}
+	
+		\item 
+		\begin{gather*}
+			\frac{dy}{dt}=2y-10, \quad y(0)=y_0\\
+			\frac{1}{2}\frac{dy}{dt}=y-5\quad \therefore \quad \frac{1}{y-\frac{5}{2}}\frac{dy}{dt}=2\\
+			\frac{d}{dt}\ln|y-5|=2 \quad \therefore \quad \int \frac{d}{dt}\ln|y-5|\, dt=2\int dt\\
+			\ln|y-5|=2t+K_1\\
+			e^{\ln|y-5|}=K_2e^{2t}\\
+			y(t)=5+K_2e^{2t}, \quad K_2 \neq 0
+		\end{gather*}
+			Solving the initial value problem:
+		\begin{gather*}
+			y_0=5+K_2 \quad \therefore \quad K_2=y_0-5\\
+			\boxed{y(t)=5+(y_0-5)e^{2t}}
+		\end{gather*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	\begin{solparts}
+		\item 
+		\begin{gather*}
+			\frac{dy}{dt}=-ay+b\\
+			\frac{1}{y-\frac{b}{a}}\frac{dy}{dt}=-a\\
+			\int \frac{d}{dt}\ln\left|y-\frac{a}{b}\right|\, dt=-a \int dt\\
+			\ln\left|y-\frac{a}{b}\right|=-at+K_1 \quad \therefore \quad e^{\ln\left|y-\frac{a}{b}\right|}=K_2e^{-at}\\
+			\boxed{y(t)=\frac{a}{b}+K_2e^{-at}, \quad K_2 \neq 0}
+		\end{gather*}
+		
+		\item
+		This problem remains open.
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	\begin{solparts}
+		\item 
+		\begin{gather*}
+			\frac{dy}{dt}=ay-b
+		\end{gather*}
+		A \textit{equilibrium solution} consists of a solution that is constant in time. Be the differential equation
+		$$\frac{dy}{dt}=f(t,y).$$
+		A solution $y(t)=c$, $c \in \mathbb{R}$, is called \textit{equilibrium solutions} if satisfies
+		$$f(t,c)=0, \quad \forall t \in D_f.$$
+		Therefore,
+		\begin{gather*}
+			ay-b=0 \quad \therefore \quad \boxed{y_e=\frac{b}{a}}.
+		\end{gather*}
+	
+		\item
+		\begin{align*}
+			Y(t)&=y-y_e\\
+				&=\frac{b}{a}+K_2e^{-at}-\frac{b}{a}\\
+			Y(t)&=K_2e^{-at}
+		\end{align*}
+		Therefore,
+		$$\boxed{Y(t)=K_2e^{-at}, \quad K_2 \neq 0}.$$
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	$$\frac{dy}{dt}=ay-b$$
+	\begin{solparts}
+		\item
+		\begin{gather*}
+			\frac{dy}{dt}=ay \quad \therefore \quad \int \frac{1}{y}\, dy=a\int dt\\
+			\ln|y|=at+K_1\\
+			e^{\ln|y|}=K_2e^{at}\\
+			\boxed{y_1(t)=K_2e^{at}, \quad K_2 \neq 0}
+		\end{gather*}
+	
+		\item
+		\begin{gather*}
+			\frac{dy}{dt}=ay-b \quad \therefore \quad \frac{1}{y-\frac{b}{a}}\frac{dy}{dt}=a\\
+			\frac{d}{dt}\ln\left|y-\frac{b}{a}\right|=a\\
+			\int \frac{d}{dt}\ln\left|y-\frac{b}{a}\right| \, dt=a\int dt\\
+			\ln\left|y-\frac{b}{a}\right|=2t+K_1\\
+			e^{\ln\left|y-\frac{b}{a}\right|}=K_2e^{at}\\
+			y(t)=\frac{b}{a}+K_2e^{at}, \quad K_2 \neq 0
+		\end{gather*}
+			Obtaining the constant $K$:
+		\begin{gather*}
+			y(t)=y_1(t)+K\\
+			\frac{b}{a}+K_2e^{at}=K_2e^{at}+K\\
+			\boxed{K=\frac{b}{a}}
+		\end{gather*}
+		\item
+		\begin{gather*}
+			y=\frac{b}{a}+ce^{at}, \quad c \in \mathbb{R}
+		\end{gather*}
+			The method can be applied to any $\frac{b}{a}=g(t)$, $g:D_y \to \mathbb{R}^n$. This depend to if is possible guess the shape that the solution will probably take.
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	\begin{gather*}
+		\frac{dy}{dt}=-ay+b\\
+		\boxed{y=-\frac{b}{a}+Ke^{-at}, \quad K \neq 0}
+	\end{gather*}
+\end{solution}
+
+\begin{solution}
+	\begin{gather*}
+		\frac{dp}{dt}=\frac{p-900}{2} \quad \therefore \quad \frac{1}{p-900}\frac{dp}{dt}=\frac{1}{2}\\
+		\int \frac{d}{dt}\ln|p-900|\, dt=\frac{1}{2}\int dt\\
+		\ln|p-900|=\frac{t}{2}+K_1\\
+		e^{\ln|p-900|}=K_2e^{\frac{t}{2}}\\
+		p=900+K_2e^{\frac{t}{2}}, \quad K_2 \neq 0
+	\end{gather*}
+	\begin{solparts}
+		\item
+		Solving que initial value problem, we obtain:
+		\begin{gather*}
+			p(0)=850\\
+			850=900+K_2 \quad \therefore \quad K_2=-50\\
+			p(t)=900-50e^{\frac{t}{2}} \quad \therefore \quad e^{\frac{t}{2}}=18\\
+			\ln e^\frac{t}{2}=\ln 18\\
+			t=2\ln 18 \quad \therefore \quad \boxed{t\approx 5.78\,\text{months}}
+		\end{gather*}
+		
+		\item
+		\begin{gather*}
+			p(0)=p_0,\quad p_0 \in \left] 0,900 \right[ \\
+			p_0 = 900+K_2 \quad \therefore \quad K_2=p_0-900\\
+			p(t)=900+(p_0-900)e^{\frac{t}{2}}\quad \therefore \quad \frac{900}{900-p_0}=e^{\frac{t}{2}}\\
+			\ln e^{\frac{t}{2}}=\ln 900 - \ln (900-p_0)\\
+			\boxed{t=2\ln \frac{900}{900-p_0},\quad p_0 \in \left] 0,900 \right[}
+		\end{gather*}
+	
+		\item 
+		\begin{gather*}
+			\ln \frac{900}{900-p_0}=\frac{t}{2}\\
+			e^{\ln \frac{900}{900-p_0}}=e^{-\frac{t}{2}}\\
+			\frac{900}{900-p_0}=e^{-\frac{t}{2}}\\
+			p_0=900(1-e^{\frac{t}{2}})\\
+			p_0=1-e^{-6} \quad \therefore \quad \boxed{p_0 \approx 0.9975}
+		\end{gather*}
+		\textcolor{red}{Verify the problem to confirm the answer.}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	$$\frac{dp}{dt}=rp$$
+	\begin{solparts}
+		\item
+		\begin{gather*}
+			\int \frac{dp}{p}=r\int dt \quad \therefore \quad \ln|p|=rt + K_1\\
+			e^{\ln|p|}=K_2e^{rt}\\
+			p(t)=K_2e^{rt}, \quad K_2 \neq 0
+		\end{gather*}
+		Using the initial values:
+		\begin{gather*}
+			p(0)=K_2\\
+			P(30)=p(0)e^{rt}\\
+			2p(0)=p(0)e^{rt}\\
+			e^{30r}=2 \quad \therefore \quad \ln e^{30r}=\ln 2\\
+			30r=\ln 2\\
+			\boxed{r=\frac{\ln 2}{2}}
+		\end{gather*}
+		\item
+		\begin{gather*}
+			p(t)=p(0)e^{rt}\\
+			p(N)=p(0)e^{Nr}\\
+			2p(0)=p(0)e^{Nr} \quad \therefore \quad \ln e^{Nr}=\ln 2\\
+			Nr=\ln 2\quad \therefore \quad \boxed{r=\frac{\ln 2}{N}}
+		\end{gather*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	$$\frac{dv}{dt}=9.8-\frac{v}{5}, \quad v(0)=0$$
+	\begin{solparts}
+		\item
+		The limit velocity corresponding to that at which there is no  further variation in this module, satisfying
+		\begin{align*}
+			\frac{dv}{dt}&=0\\
+			9.8-\frac{v}{5}&=0 \quad \therefore \quad v_{\infty}=49\,\text{m/s}.
+		\end{align*}
+		The required velocity is, therefore, $v(t_0)=0.98v_{\infty}$.
+		\begin{align*}
+			-\frac{dv}{dt}=\frac{v-49}{5} \quad \therefore \quad \frac{1}{v-49}\frac{dv}{dt}=-\frac{1}{5}\\
+			\frac{d}{dt}\ln|v-49|=-\frac{1}{5}\\
+			\int \frac{d}{dt}\ln|v-49|\, dt=-\frac{1}{5}\int dt\\
+			\ln|v-49|=-\frac{t}{5}+K_1 \quad \therefore \quad e^{\ln|v-49|}&=K_2e^{-\frac{t}{5}}\\
+			v(t)&=49+K_2e^{-\frac{t}{5}}\\
+		\end{align*}
+		Be $v(t_0)=0.98v_{\infty}$, $v_{\infty}=49\,\text{m/s}$:
+		\begin{gather*}
+			e^{-\frac{t_0}{5}}=1-\frac{0.98v_{\infty}}{49} \quad \therefore \quad \ln e^{-\frac{t_0}{5}}=\ln \left[1-\frac{0.98v_{\infty}}{49}\right]\\
+			t_0=-5\ln \left[1-\frac{0.98v_{\infty}}{49}\right]\\
+			\boxed{t_0\approx 19.56\, \text{s}}
+		\end{gather*}
+		
+		\item 
+		\begin{align*}
+			v(t)&=49(1-e^{-\frac{t}{5}})\\
+			\frac{dx}{dt}&=49(1-e^{-\frac{t}{5}})\quad \therefore \quad \int dx=49\int 1-e^{-\frac{t}{5}}\, dt
+		\end{align*}
+		\begin{align*}
+			x(t)&=49t+245e^{-\frac{t}{5}}+K_1\\
+			x(t)&=49t+245e^{-\frac{t}{5}}-245\footnotemark\\
+			x(t_0)&=49t_0+245e^{-\frac{t_0}{5}}-245\quad \therefore \quad \boxed{x(t_0)\approx 718.34\, \text{m}}
+		\end{align*}
+		\footnotetext{We assume $K_1=-245$ since the fall starts from rest.}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	$$\frac{dv}{dt}=9.8$$
+	\begin{solparts}
+		\item
+		Be $v(0)=0$ the initial value problem. 
+		\begin{gather*}
+			\int dv=9.8\int dt\\
+			v(t)=9.8t+K_1\\
+		\end{gather*}
+		Solving the IVP:
+		\begin{gather*}
+			v(0)=K_1 \quad \therefore \quad K_1=0\\
+			\boxed{v(t)=9.8t}
+		\end{gather*}
+	
+		\item
+		Be $x(0)=0$ the initial valeu problem.
+		\begin{gather*}
+			\frac{dx}{dt}=9.8t\\
+			\int dx=9.8\int t \, dt\\
+			x=4.9t^2+K_2\\
+			x(t)=4.9t^2
+		\end{gather*}
+		Using $x(t_0)=300$ as information to the problem.
+		\begin{gather*}
+			300 = 4.9\, t_0^2\\
+			\boxed{t_0\approx 7.82\, s}
+		\end{gather*}
+		\item
+		\begin{gather*}
+			v(t_0)=9.8\, t_0\\
+			\boxed{v(t_0)\approx 76.68 \, \text{m/s}}
+		\end{gather*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	This problem remains open.
+\end{solution}
+
+\begin{solution}
+	\begin{gather*}
+		\begin{cases}
+			\frac{dQ}{dt}=-rQ, & r > 0\\
+			Q(0)=100, & Q(1)=82.04
+		\end{cases}
+	\end{gather*}
+	\begin{solparts}
+		\item
+		\begin{align*}
+			\int \frac{dQ}{Q}=-r\int dt \quad \therefore \quad \ln|Q|&=-rt+K_1\\
+			e^{\ln|Q|}&=K_2e^{-rt}\\
+			Q(t)&=K_2e^{-rt},\, K_2 \neq 0
+		\end{align*}
+		Be $Q(0)=100$, $K_2=100$:
+		\begin{align*}
+			Q(t)=100e^{-rt} \quad \therefore \quad Q(1)&=100e^{-r}\\
+			e^{-r}&=\frac{82.04}{100}\\
+			\ln e^{-r}&=\ln \frac{82.04}{100}\\
+			r=&-\ln \frac{82.04}{100}\quad \therefore \quad \boxed{r\approx 0.198}
+		\end{align*}
+	
+		\item
+		\begin{gather*}
+			\boxed{Q(t)=100e^{-rt}}
+		\end{gather*}
+	
+		\item
+		\begin{align*}
+			Q(t_0)=\frac{Q(0)}{2} \quad \therefore \quad 100e^{-rt_0}&=\frac{Q(0)}{2}\\
+			e^{rt_0}&=\frac{1}{2}\\
+			\ln e^{-rt_0}&=\ln \frac{1}{2}\\
+			t_0&=-\frac{\ln \frac{1}{2}}{r} \quad \therefore \quad \boxed{t_0 \approx 3.5\, \text{weeks}}
+		\end{align*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	\begin{align*}
+		\frac{dQ}{dt}=-rQ \qquad Q(\tau)&=Q(0)e^{-rt}\\
+		\frac{Q(0)}{2}&=Q(0)e^{-rt}
+	\end{align*}
+	Solving the initial value problem, $Q(0)=K_2$:
+	\begin{align*}
+		e^{-r\tau}&=\frac{1}{2}\\
+		\ln (-r\tau)&=\ln \frac{1}{2}\\
+		r\tau &= -\ln \frac{1}{2} = \ln \left(\frac{1}{2}\right)^{-1}\quad \therefore \quad \boxed{r\tau=\ln 2}\\
+	\end{align*}
+\end{solution}
+
+\begin{solution}
+	\begin{gather*}
+		\frac{dQ}{dt}=-rQ, \qquad
+		\begin{cases}
+			Q(\tau)=\frac{Q(0)}{2}\\
+			Q(t_0)=\frac{Q(\tau)}{2}
+		\end{cases}
+	\end{gather*}
+	\begin{align*}
+		\int \frac{dQ}{Q}=-r\int dt \quad \therefore \quad
+		\ln|Q|&=-rt+K_1\\
+		e^{\ln|Q|}&=K_2e^{-rt}\\
+		Q(t)&=K_2e^{-rt},\, K_2 \neq 0\\
+		Q(t)&=Q(0)e^{-rt}
+	\end{align*}
+	\begin{align*}
+		Q(t_0)&=Q(0)e^{-rt_0}\\
+		\frac{Q(\tau)}{2}&=Q(0)e^{-rt_0}\\
+		e^{-rt_0}&=\frac{Q(\tau)}{2Q(0)}\\
+		\ln e^{-rt_0}&=\ln \frac{Q(\tau)}{2Q(0)} \quad \therefore \quad \boxed{t_0=-\frac{\ln \frac{Q(\tau)}{2Q(0)}}{r}}
+	\end{align*}
+\end{solution}
+
+\begin{solution}
+	\begin{gather*}
+		\begin{cases}
+			\frac{du}{dt}=-K(u-T),\, K \geq 0\\
+			u(0)=u_0
+		\end{cases}
+	\end{gather*}
+	\begin{solparts}
+		\item
+		\begin{align*}
+			\frac{du}{dt}=-K(u-T) \quad \therefore \quad \frac{1}{u-T}\frac{du}{dt}&=-K\\
+			\frac{d}{dt}\ln|u-T|&=-K\\
+			\int \frac{d}{dt}\ln|u-T|\, dt&=-K \int dt\\
+			\ln|u-T|&=-Kt+C\\
+			e^{\ln|u-T|}&=ce^{-Kt}\\
+			u(t)&=ce^{-Kt}+T
+		\end{align*}
+		Solving the initial value problem, we have that $c=u_0-T$. Therefore:
+		\begin{gather*}
+			\boxed{u(\tau)=(u_0-T)e^{-Kt}+T}.
+		\end{gather*}
+		
+		\item
+		We assume that $u(\tau)=\frac{u(0)}{2}=\frac{u_0-T}{2}$. Thus,
+		\begin{align*}
+			\frac{u_0-T}{2}&=(u-T)e^{-K\tau}+T\\
+			e^{-K\tau}&=\frac{u_0-3T}{2(u-T)}\\
+			\ln e^{-K\tau}&=\ln \frac{u_0-3T}{2(u-T)}\quad \therefore \quad \boxed{K=-\frac{\ln \frac{u_0-T}{2(u-T)}}{\tau}}.
+		\end{align*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	Be $u(0)=70$, $T=10$, $u(t_0)=32$. As seen in the \textbf{problem 15}:
+	\begin{gather*}
+		\frac{du}{dt}=-K(u-T),\quad u(t)=ce^{-Kt}+T.
+	\end{gather*}
+	Solving the initial value problem, $c=u(0)-T$.
+	\begin{align*}
+		u(t)&=(u(0)-T)e^{-Kt}+T\\
+		u(t_0)&=(u(0)-T)e^{-Kt}+T \quad \therefore \quad e^{-Kt}=\frac{u(t_0)-T}{u(0)-T}
+	\end{align*}
+	Solving to $t_0$, we obtain:
+	\begin{gather*}
+		t_0=-\frac{\ln \frac{u(t_0)-T}{u(0)-T}}{K}\quad \therefore \quad \boxed{t_0 \approx 6.65\, h}.
+	\end{gather*}
+\end{solution}
+
+\begin{solution}
+	$$R\frac{dQ}{dt}+\frac{Q}{C}=V$$
+	\begin{solparts}
+		\item
+		\begin{gather*}
+			\frac{dQ}{dt}=\frac{V}{R}-\frac{Q}{RC} \quad \therefore \quad \frac{dQ}{dt}=\frac{1}{R}\left(\frac{VC-Q}{C}\right)\\
+			\frac{1}{Q-VC}\frac{dQ}{dt}=-\frac{1}{R}\\
+			\int \frac{d}{dt}\ln |Q-VC|\, dt=-\frac{1}{R}\int dt
+		\end{gather*}
+		\begin{align*}
+			\ln |Q-VC|&=-\frac{t}{R}+C\\
+			e^{\ln |Q-VC|}&=ce^{-\frac{t}{R}}\\
+			Q(t)&=ce^{-\frac{t}{R}}+VC,\quad c=-VC \quad \therefore \quad \boxed{Q(t)=VC(1-e^{-\frac{t}{R}})}
+		\end{align*}
+	
+		\item 
+		\begin{gather*}
+			\begin{cases}
+				\frac{dQ}{dt}=-\frac{Q-VC}{R}\\
+				\frac{dQ}{dt}=0
+			\end{cases}
+		\therefore \quad \boxed{Q_L=VC}
+		\end{gather*}
+		
+		\item 
+		\begin{align*}
+			\begin{cases}
+				V(t_1)=0\\
+				Q(t_1)=Q_L=VC
+			\end{cases}
+		\therefore \quad Q(t_1)&=VC(1-e^{-\frac{t_1}{R}})\\
+		Q(t_1)&=VC(1-e^{-\frac{t_1}{R}})\\
+		VC&=VC(1-e^{-\frac{t_1}{R}})\\
+		e^{-\frac{t_1}{R}}&=1\\
+		\ln e^{-\frac{t_1}{R}}&=0 \quad \therefore \quad \boxed{t_1 = 0}
+		\end{align*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	\begin{solparts}
+		\item
+		Be $V=10^6$ gal the water volume of the lake. The rate substance inlet is given by:
+		\begin{gather*}
+			r_{\text{inlet}}=10^{-2}\, \frac{\text{g}}{\text{gal}}\cdot 300\,\frac{\text{gal}}{\text{h}}=3\,\frac{\text{g}}{\text{h}}
+		\end{gather*}
+		
+		The concentration of chemical product in the lake at any time $t$ is given by:
+		\begin{gather*}
+			\frac{Q(t)}{V}=\frac{Q(t)}{10^6\, \text{gal}}.
+		\end{gather*}
+		The exit rate is determined by:
+		\begin{align*}
+			r_{\text{exit}}&=\frac{Q(t)}{10^6\, \text{gal}}\cdot 300\,\frac{\text{gal}}{\text{h}}\\
+			r_{\text{exit}}&=\frac{300\,\frac{\text{gal}}{\text{h}}}{10^6\, \text{gal}}\cdot Q(t)
+		\end{align*}
+		The model relates to the rate of chemical product in the lake is, therefore:
+		\begin{gather*}
+			\frac{dQ}{dt}=r_{\text{exit}}-r_{\text{inlet}} \quad \therefore \quad \boxed{\frac{dQ}{dt}=3[1-10^{-4}Q(t))]}
+		\end{gather*}
+	
+		\item
+		\begin{align*}
+			\frac{dQ}{dt}&=3[1-10^{-4}Q(t))]\\
+			\frac{10^4}{Q(t)-10^4}\frac{dQ}{dt}&=-3\\
+			10^4\frac{d}{dt}\ln |Q(t)-10^4|&=-3\\
+			\int \frac{d}{dt}\ln |Q(t)-10^4|\, dt&=-3\cdot 10^{-4}\int dt\\
+			\ln |Q(t)-10^4|&=-3\cdot 10^{-4}t+C\\
+			e^{\ln |Q(t)-10^4|}&=ce^{-3\cdot 10^{-4}t} \quad \therefore \quad Q(t)=ce^{-3\cdot 10^{-4}t}+10^4
+		\end{align*}
+		Be $Q(0)=0$, $c=-10^4$. Thus,
+		\begin{align*}
+			Q(t)&=10^4(1-e^{-3\cdot 10^{-4}t})\\
+			Q(8640)&=10^4(1-e^{-2.5}) \quad \therefore \quad \boxed{Q(8640) \approx 9179.15\, \text{g}}.
+		\end{align*}
+		
+		\item
+		\begin{align*}
+			\frac{dQ}{dt}&=-3\cdot 10^{-4}\,Q(t)\\
+			\frac{1}{Q(t)}\frac{dQ}{dt}&=-3\cdot 10^{-4}\\
+			\ln|Q|&=-3\cdot 10^{-4}t+C\\
+			e^{\ln|Q|}&=ce^{-3\cdot 10^{-4}t}\quad \therefore \quad
+			\boxed{
+			\begin{cases}
+				Q(t)=ce^{-3\cdot 10^{-4}t}\\
+				Q(0)=9179.15
+			\end{cases}
+		}
+		\end{align*}
+		
+		\item
+		Be $Q(0)=0$, $c=Q(0)$. We have
+		\begin{gather*}
+			\boxed{Q(t)=Q(0)\, e^{-3\cdot 10^{-4}t}}.
+		\end{gather*}
+	
+		\item
+		\begin{align*}
+			\begin{cases}
+				\frac{dQ}{dt}=Q(0)\, e^{-3\cdot 10^{-4}t}\\
+				\quad Q(t_0)=10
+			\end{cases}
+			\therefore \quad
+			e^{-3\cdot 10^{-4}t_0}&=\frac{10}{Q(0)}\\
+			\ln e^{-3\cdot 10^{-4}t_0}&=\ln \frac{10}{Q(0)}\\
+			t_0&=-3\cdot 10^{4}\,\ln \frac{10}{Q(0)} \quad \therefore \quad \boxed{t_0\approx 947.5\, \text{days}}
+		\end{align*}
+	\end{solparts}
+\end{solution}
+
+\begin{solution}
+	Be $V=6\cdot 10^4$ gal, $m_{\text{dye}}=5$ kg, $m_{\text{water}}=200\, \frac{\text{gal}}{\text{min}}$.
+	\begin{solparts}
+		\item
+		\begin{gather*}
+			\frac{dq}{dt}=-\frac{200\, \frac{\text{gal}}{\text{min}}}{6\cdot 10^4\, \text{gal}}\, q(t)\quad \therefore \quad \boxed{
+				\begin{cases}
+					\frac{dq}{dt}=-\frac{1}{300}\, q(t)\\
+					q(0)=5
+				\end{cases}
+			}
+		\end{gather*}
+		
+		\item
+		\begin{align*}
+			\frac{1}{q}\frac{dq}{dt}&=-\frac{1}{300}\\
+			\int \frac{d}{dt} \ln|q|\, dt&=-\frac{1}{300}\int dt\\
+			\ln |q|&=-\frac{1}{300}t+C\\
+			e^{\ln |q|}&=ce^{-\frac{1}{300}t}\\
+			q(t)&=ce^{-\frac{1}{300}t},\, c \in \mathbb{R^*_+}
+		\end{align*}
+		Solving the initial value problem, in which $c=q(0)=5$:
+		\begin{gather*}
+			\boxed{q(t)=5e^{-\frac{1}{300}t}}.
+		\end{gather*}
+		
+		\item
+		\begin{align*}
+			q(t_0)&=2\cdot 10^{-2}\frac{\text{g}}{\text{gal}}\cdot 6\cdot 10^4\, \text{gal}\\
+			&=1200\, \text{g}\\
+			q(t_0)&=1.2\, \text{kg}
+		\end{align*}
+		Using the given value,
+		\begin{align*}
+			q(t_0)&=5e^{-\frac{1}{300}t_0}\\
+			\ln e^{-\frac{1}{300}t_0}&=\ln 0.24\\
+			t_0&=-300\, \ln 0.24 \quad \therefore \quad
+			\boxed{t_0\approx 428.13\,\text{min}}.
+		\end{align*}
+		As $t_0\approx 7.13\,\text{h}$, $t_0>4\,\text{h}$, the system don't will can filter the water at the limit of $4\, \text{h}$.
+		
+		\item 
+		Be $x$ the flow rate promoted by the water filter.
+		\begin{gather*}
+			\frac{dq}{dt}=-\frac{x\frac{\text{gal}}{\text{min}}}{6\cdot 10^4\,\text{gal}}\, q(t)\\
+			q(t_0)=2\cdot 10^{-2}\frac{\text{g}}{\text{gal}}\cdot 6\cdot 10^4\, \text{gal}=1200\,\text{g}\frac{\text{kg}}{10^3\,\text{g}}=1.2\, \text{kg}\\
+			t_0=4\,\text{h}\frac{60\,\text{min}}{\text{h}}=240\,\text{min}
+		\end{gather*}
+		\begin{align*}
+			q(t_0)&=5e^{-\frac{x}{6\cdot 10^4}t_0}\\
+			1.2&=5e^{-4\cdot 10^{-3}x}\\
+			\ln e^{-4\cdot 10^{-3}x}&=\ln 0.24\\
+			x&=-\frac{\ln 0.24}{4\cdot 10^{-3}} \quad \therefore \quad \boxed{x\approx 356.78\,\frac{\text{gal}}{\text{min}}}
+		\end{align*}
+	\end{solparts}
+\end{solution}
