@@ -23,7 +23,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Estado Plano de Tensões}
+\rhead{Estado plano de tensões}
 \lhead{Caio Magno Mendonça Nicácio}
 \cfoot{\thepage}
 
@@ -36,7 +36,7 @@
 \begin{document}
 	
 	\begin{center}
-		\Large\textbf{Estado Plano de Tensões} \\
+		\Large\textbf{ESTADO PLANO DE TENSÕES} \\
 		\normalsize
 		Data: \today
 	\end{center}
@@ -131,7 +131,7 @@
 
 	\subsection{Transformação de tensão no plano}
 
-	Uma vez que o estado de tensão em um plano é definido por três componentes, então um elemento que tinha orientação diferente está sujeito a três componentes diferentes de tensão (Fig. \ref{fig:estado-plano-2}). Se o estado de tensão for definido pelas componentes $\sigma_{x}$, $\sigma_{y}$ e $\tau_{xy}$, orientadas ao longo dos eixos $x$ e $y$, será possível obter as componentes $\sigma_{x}'$, $\sigma_{y}'$ e $\tau_{xy}'$, orientadas ao longo dos eixos $x'$ e $y'$, que representam o mesmo estado de tensão no ponto\footnote{Quando alterada a orientação, o comportamento é preservado para ambos os sistemas de coordenadas. Isso equivale a conhecer duas componentes $F_x$ e $F_y$, dirigidas ao longo dos eixos $x$ e $y$, que produzem uma força resultante $\boldsymbol{\vec{F}_R}=F_x\mathbf{i}+F_y\mathbf{j}$, e então determinar as componentes $F_x'$ e $F_y'$, que produzem a mesma resultante no sistema de coordenadas orientado pelos eixos $x'$ e $y'$.}.
+	Uma vez que o estado de tensão em um plano é definido por três componentes, então um elemento que tinha orientação diferente está sujeito a três componentes diferentes de tensão (Fig. \ref{fig:estado-plano-2}). Se o estado de tensão for definido pelas componentes $\sigma_{x}$, $\sigma_{y}$ e $\tau_{xy}$, orientadas ao longo dos eixos $x$ e $y$, será possível obter as componentes $\sigma_{x}'$, $\sigma_{y}'$ e $\tau_{xy}'$, orientadas ao longo dos eixos $x'$ e $y'$, que representam o mesmo estado de tensão no ponto\footnote{Quando alterada a orientação, o comportamento é preservado para ambos os sistemas de coordenadas. Isso equivale a conhecer duas componentes $F_x$ e $F_y$, dirigidas ao longo dos eixos $x$ e $y$, que produzem uma força resultante $\boldsymbol{\vec{F}_R}=F_x \, \mathbf{i}+F_y \, \mathbf{j}$, e então determinar as componentes $F_x'$ e $F_y'$, que produzem a mesma resultante no sistema de coordenadas orientado pelos eixos $x'$ e $y'$.}.
 
 	\begin{figure}[h!]
 		\centering
@@ -268,7 +268,45 @@
 	
 	\subsubsection{Componentes no plano $x'y'$}
 	
-	$\sigma_{x}'$ é a componente normal no plano ao vetor $\boldsymbol{\vec{e}_{x'}}$.
+	A composição gráfica das seguintes demonstrações está presente na Fig. \ref{fig:vetor-tensao}.
+	
+	$\boldsymbol{\vec{t}_{x'}}=\mathbf{\sigma}\cdot \boldsymbol{\vec{e}_{x'}}$ descreve o vetor de tensão que atua no plano normal a 
+	\[
+	\boldsymbol{\vec{e}_{x'}} =
+	\begin{bmatrix}
+		\cos\theta \\
+		\sin\theta
+	\end{bmatrix}.
+	\]
+	
+	$\boldsymbol{\vec{t}_{y'}}=\mathbf{\sigma}\cdot \boldsymbol{\vec{e}_{y'}}$ descreve o vetor de tensão que atua no plano normal a 
+	\[
+	\boldsymbol{\vec{e}_{y'}} =
+	\begin{bmatrix}
+		-\sin\theta \\
+		\cos\theta
+	\end{bmatrix}.
+	\]
+	
+	\begin{figure}[h!]
+		\begin{minipage}[b]{0.48\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figure/vetor-tensao-1.png}
+			\\[-1ex]\small (a)
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.48\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figure/vetor-tensao-2.png}
+			\\[-1ex]\small (b)
+		\end{minipage}
+		\centering
+		%\captionsetup{width=16cm}
+		\caption{\centering (a) Comportamento de um plano normal a $\boldsymbol{\vec{e}_{x'}}$ cuja orientação é arbitrária ao redor do eixo $z$, e a (b) representação dos eixos em um plano sujeito à rotação $\theta$.}
+		\label{fig:vetor-tensao}
+	\end{figure}
+	
+	$\sigma_{x'}$ é a componente normal no plano ao vetor $\boldsymbol{\vec{e}_{x'}}$.
 	\begin{gather*}
 	\boldsymbol{\vec{t}_{x'}} = \mathbf{\sigma}\cdot \boldsymbol{\vec{e}_{x'}} =
 	\begin{bmatrix}
@@ -290,9 +328,9 @@
 	\end{pmatrix}
 	\end{gather*}
 
-	A componente normal $\sigma_{x'}$ e a projeção de $\boldsymbol{\vec{t}_{x´}}$ na direção $\boldsymbol{\vec{e}_{x´}}$. Logo,
+	A componente normal $\sigma_{x'}$ e a projeção de $\boldsymbol{\vec{t}_{x'}}$ na direção $\boldsymbol{\vec{e}_{x'}}$. Logo,
 	\begin{align*}
-		\sigma_{x'}&=\boldsymbol{\vec{t}_{x´}}\cdot \boldsymbol{\vec{e}_{x´}} \\
+		\sigma_{x'}&=\boldsymbol{\vec{t}_{x'}}\cdot \boldsymbol{\vec{e}_{x'}} \\
 		&=\sigma_{x}\, \cos^2 \theta + \tau_{xy}\, \sin\theta\, \cos\theta + \sigma_{y}\, \sin^2 \theta + \tau_{yx}\, \sin\theta\, \cos\theta + \sigma_{y}\, \sin^2 \theta \\
 		\sigma_{x'}&=\sigma_{x}\, \cos^2 \theta + \sigma_{y}\, \sin^2 \theta + 2\, \tau_{xy}\, \sin\theta\, \cos\theta.
 	\end{align*}
@@ -321,7 +359,7 @@
 
 	A componente normal $\sigma_{y'}$ é a projeção do vetor $\boldsymbol{\vec{t}_{y'}}$ na direção $\boldsymbol{\vec{e}_{y'}}$. Logo,
 	\begin{align*}
-		\sigma_{y'} &=\boldsymbol{\vec{t}_{y´}}\cdot \boldsymbol{\vec{e}_{y´}}\\
+		\sigma_{y'} &=\boldsymbol{\vec{t}_{y'}}\cdot \boldsymbol{\vec{e}_{y'}}\\
 		&=\sigma_{x}\, \sin^2 \theta - \tau_{xy}\, \sin\theta\, \cos\theta - \tau_{xy}\, \cos\theta \, \sin\theta + \sigma_{y}\, \cos^2 \\
 		\sigma_{y'}&=\sigma_{x}\, \sin^2 \theta + \sigma_{y}\, \cos^2 \theta - 2\, \tau_{xy}\, \sin\theta\, \cos\theta.
 	\end{align*}
@@ -396,7 +434,7 @@
 
 	\section{Vetor tração e fórmula de Cauchy}
 	
-	A \textbf{força interna resultante} $\mathbf{T}^{(n)}$ pode ser calculada, quando selecionado um elemento estrutural. Seleciona-se um ponto $P$ na qual irá passar o plano de corte, com orientação segundo um versor $\boldsymbol{\vec{n}}$ (Fig. \ref{fig:stress-vector}).
+	A \textbf{tensão interna resultante} $\mathbf{T}^{(n)}$ pode ser calculada, quando selecionado um elemento estrutural. Seleciona-se um ponto $P$ na qual irá passar o plano de corte, com orientação segundo um versor $\boldsymbol{\vec{n}}$ (Fig. \ref{fig:stress-vector}).
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=8cm]{figure/stress-vector.png}
@@ -407,11 +445,11 @@
 
 	Por definição, $\mathbf{T}^{(n)}=\lim_{\Delta A \to 0}\frac{\sum \boldsymbol{\vec{F}}}{\Delta A}$. Visto que $\sum \boldsymbol{\vec{F}}$ é uma grandeza vetorial, tal que 
 	\[
-	\sum \boldsymbol{\vec{F}}=\Delta F\,\mathbf{n}+\Delta V_s\, \mathbf{s}+\Delta V_t\, \mathbf{t},
+	\sum \boldsymbol{\vec{F}}=\Delta N\,\mathbf{n}+\Delta V_s\, \mathbf{s}+\Delta V_t\, \mathbf{t},
 	\]
 	pode-se concluir que
 	\begin{gather*}
-	\mathbf{T}^{(n)}=\lim_{\Delta A \to 0} \left(\frac{\Delta F}{\Delta A}\, \mathbf{n}+\frac{\Delta V_s}{\Delta A}\, \mathbf{s}+\frac{\Delta V_t}{\Delta A}\, \mathbf{t}\right) \\
+	\mathbf{T}^{(n)}=\lim_{\Delta A \to 0} \left(\frac{\Delta N}{\Delta A}\, \mathbf{n}+\frac{\Delta V_s}{\Delta A}\, \mathbf{s}+\frac{\Delta V_t}{\Delta A}\, \mathbf{t}\right) \\
 	\mathbf{T}^{(n)}=\sigma_n\, \mathbf{n}+\tau_{ns}\, \mathbf{s}+\tau_{nt}\, \mathbf{t},
 	\end{gather*}
 	onde $\tau_{ns}$ e $\tau_{nt}$ representam as componentes da tensão de cisalhamento $\tau_{n}$ no plano ortogonal $st$ da superfície selecionada.
@@ -492,6 +530,58 @@
 	\end{bmatrix},
 	\]
 	onde $t_x$, $t_y$ e $t_z$ são as componentes cartesianas do vetor tensão resultante $\boldsymbol{\vec{t}}$, onde cada linha é um escalar aplicado ao plano com normal $\boldsymbol{\vec{n}}$.
+	
+	Seja
+	\[
+	\boldsymbol{\vec{n}}=\mathbf{i}=
+	\begin{bmatrix}
+		1 \\
+		0 \\
+		0
+	\end{bmatrix}
+	\]
+	o vetor normal ao plano normal ao eixo $x$.
+	\begin{gather*}
+		\boldsymbol{\vec{t}} =
+		\begin{bmatrix}
+			t_x \\
+			t_y \\
+			t_z
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			\sigma_{x} \\
+			\tau_{yx} \\
+			\tau_{zx}
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			\sigma_{x} \\
+			\tau_{xy} \\
+			\tau_{xz}
+		\end{bmatrix}
+		\\
+		\boldsymbol{\vec{t}}=\sigma_x \,\mathbf{i}+\tau_{xy}\,\mathbf{j}+\tau_{xz}\,\mathbf{k}
+	\end{gather*}
+
+	$\boldsymbol{\vec{t}}$ é justamente o vetor $\mathbf{T}^{(n)}$ resultante aplicado no plano cuja normal é $\mathbf{i}$.
+	
+	Considerando um plano cuja normal é o vetor arbitrário
+	\[
+	\boldsymbol{\vec{n}}=
+	\begin{bmatrix}
+		n_x \\
+		n_y \\
+		n_z
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		\cos \alpha \\
+		\cos \beta \\
+		\cos \gamma
+	\end{bmatrix},
+	\]
+	$n_x$, $n_y$ e $n_z$ atuam como cossenos diretores do vetor unitário\footnote{As componentes do vetor $\boldsymbol{\vec{n}}$ são os cossenos dos ângulos que o vetor forma com os eixos coordenados.} $\boldsymbol{\vec{n}}$, o qual representam quanto $\boldsymbol{\vec{n}}$ aponta na direção $i=x,y,z$, e são fundamentais para calcular tensões em planos inclinados.
 	
 	%\bibliography{pos-textuais/referencias.bib}
 
