@@ -393,11 +393,91 @@
 	\end{equation}
 	
 	\subsection{Tensões principais e tensão de cisalhamento máxima no plano}
-	\begin{quote}
-	\small $\sigma_{x'}$, $\sigma_{y'}$ e $\tau_{x'y'}$ dependem do ângulo de inclinação dos planos nos quais as tensões agem. Na engenharia, é interessante determinar a orientação dos planos que fazem com que a tensão seja máxima ou mínima ($\theta_{p1}$ e $\theta_{p2}$) e a orientação dos planos cem que a tensão de cisalhamento seja máxima ($\theta_{s1}$ e $\theta_{s2}$).
-	\end{quote}
 	
-	\subsubsection{Demonstração da transformada do tensor de Cauchy}
+	\begin{quote}
+	\small $\sigma_{x'}$, $\sigma_{y'}$ e $\tau_{x'y'}$ dependem do ângulo de inclinação dos planos nos quais as tensões agem. Na engenharia, é interessante determinar a orientação dos planos que fazem com que a tensão seja máxima ou mínima ($\theta_{p1}$ e $\theta_{p2}$) e a orientação dos planos em que a tensão de cisalhamento seja máxima ($\theta_{s1}$ e $\theta_{s2}$).
+	\end{quote}
+
+	\subsubsection{Tensões principais no plano}
+	
+	Para determinar as tensão normal máxima e mínima, deve-se diferenciar as equações em função de $\theta$ e determinar os pontos de máximo e mínimo.
+	\begin{gather}
+		\frac{d\sigma_{x'}}{d\theta}=-\frac{\sigma_x-\sigma_y}{2}\, (2\sin 2\theta)+2\, \tau_{xy}\, \cos 2\theta=0 \nonumber\\
+		\tan 2\theta_p=\frac{2\, \tau_{xy}}{\sigma_x-\sigma_y}
+		\label{eq:angulo-normal-max-min}
+	\end{gather}
+	Resolvendo a Eq. \ref{eq:angulo-normal-max-min}, é possível obter a orientação dos planos da tensão normal máxima e mínima, dada por duas raízes $\theta_{p1}$ e $\theta_{p2}$.
+	
+	Especificamente, os valores de $2\theta_{p1}$ e $2\theta_{p2}$ estão afastados um do outro por $\ang{180}$, portanto, $\theta_{p1}$ e $\theta_{p2}$ estão afastados por $\ang{90}$, tal que $\theta_{p1}=\theta_{p2}+\ang{90}$.
+	
+	Os valores de $\theta_{p1}$ e $\theta_{p2}$ devem ser substituídos na Eq. \ref{eq:sigma_x_2} quando se deseja obter as \textbf{tensões principais}.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=8.5cm]{figure/triangulo-tensao-principal.png}
+		%\captionsetup{width=16cm}
+		\caption{\centering Construção geométrica do raio do círculo de Mohr e dos ângulos associados às tensões principais.}
+		\label{fig:triangulo-tensao-principal}
+	\end{figure}
+	A construção dos triângulos presentes na Fig. \ref{fig:triangulo-tensao-principal} baseia-se na Eq. \ref{eq:angulo-normal-max-min}, desde que $\tau_{xy}$ e ($\sigma_{x}-\sigma_{y}$) sejam ambas quantidades positivas ou negativas. Sobre a figura, é permitido obter, para $\theta_{p1}$,
+	\begin{gather*}
+		\sin 2\theta_{p1}=\frac{\tau_{xy}}{\sqrt{\left(\frac{\sigma_{x}-\sigma_{y}}{2}\right)^2+\tau_{xy}^2}} \\
+		\cos 2\theta_{p1}=\frac{\frac{\sigma_{x}-\sigma_{y}}{2}}{\sqrt{\left(\frac{\sigma_{x}-\sigma_{y}}{2}\right)^2+\tau_{xy}^2}},
+	\end{gather*}
+	e para $\theta_{p2}$,
+	\begin{gather*}
+		\sin 2\theta_{p2}=-\frac{\tau_{xy}}{\sqrt{\left(\frac{\sigma_{x}-\sigma_{y}}{2}\right)^2+\tau_{xy}^2}} \\
+		\cos 2\theta_{p2}=-\frac{\frac{\sigma_{x}-\sigma_{y}}{2}}{\sqrt{\left(\frac{\sigma_{x}-\sigma_{y}}{2}\right)^2+\tau_{xy}^2}}.
+	\end{gather*}
+
+	Se qualquer um dos dois conjuntos for substituído\footnote{Caso as relações sejam substituídas na Eq. \ref{eq:tau_xy_2}, o valor de $\tau_{x'y'}$ será nulo; isto é, nenhuma tensão de cisalhamento age nos planos principais.} na Eq. \ref{eq:sigma_x_2}, para $\sigma_{x'}$, obtêm-se
+	\begin{gather}
+		\sigma_{1/2}=\frac{\sigma_{x}+\sigma_{y}}{2}\pm \sqrt{\left(\frac{\sigma_{x}-\sigma_{y}}{2}\right)^2+\tau_{xy}^2}.
+		\label{eq:tensao-principal}
+	\end{gather}
+	Dependendo do sinal escolhido, o resultado fornece a tensão normal máxima ou mínima que age em um ponto, onde, por convenção, $\sigma_{1}\geq \sigma_{2}$\footnote{$\sigma_{x}$, $\sigma_{y}$ e $\tau_{xy}$ são valores constantes de tensão em uma orientação qualquer, tal como a inicial.}.
+	
+	\subsubsection{Tensão de cisalhamento máxima no plano}
+	
+	A orientação de um elemento cujas faces estão sujeitas à tensão de cisalhamento é obtida diferenciando a Eq. \ref{eq:tau_xy_2}. Logo,
+	\begin{gather}
+		\frac{d\tau_{x'y'}}{d\theta}=-\frac{\sigma_{x}-\sigma_{y}}{2}\,2\, \cos 2\theta-2\, \tau_{xy}\,\sin 2\theta=0 \nonumber \\
+		2\, \sin 2\theta=-\frac{\sigma_{x}-\sigma_{y}}{\tau_{xy}}\, \cos 2\theta \nonumber \\
+		\tan 2\theta_{s}=-\frac{\sigma_{x}-\sigma_{y}}{2\, \tau_{xy}}.
+		\label{eq:angulo-cisalhamento-max}
+	\end{gather}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=8.5cm]{figure/triangulo-tensao-cisalhamento.png}
+		%\captionsetup{width=16cm}
+		\caption{\centering Construção geométrica do raio do círculo de Mohr e dos ângulos associados à tensão de cisalhamento máxima.}
+		\label{fig:triangulo-tensao-cisalhamento}
+	\end{figure}
+	A construção dos triângulos presentes na Fig. \ref{fig:triangulo-tensao-cisalhamento} baseia-se na Eq. \ref{eq:angulo-cisalhamento-max}, desde que $\tau_{xy}$ e ($\sigma_{x}-\sigma_{y}$) sejam ambas quantidades positivas ou negativas.
+	
+	Por comparação, cada raiz de 2$\theta_{s}$ está a $\ang{90}$ de 2$\theta_{p}$. Logo,
+	\[
+	\theta_{s}=\theta_{p}+\ang{45}.
+	\]
+	
+	Além disso, tomando as relações para $\sin 2\theta_{s}$ e $\cos 2\theta_{s}$ na Eq. \ref{eq:tau_xy_2}, para $\tau_{x'y'}$, é obtido
+	\begin{equation}
+		\tau_{\text{máx}}=\sqrt{\left(\frac{\sigma_{x}-\sigma_{y}}{2}\right)^2+\tau_{xy}^2},
+		\label{eq:tensao-cisalhamento-max}
+	\end{equation}
+	que expressa a \textbf{tensão de cisalhamento máxima no plano}\footnote{$\sigma_{x}$, $\sigma_{y}$ e $\tau_{xy}$ são valores constantes de tensão em uma orientação qualquer, tal como a inicial.}.
+	
+	Substituindo as relações para $\sin 2\theta_{s}$ e $\cos 2\theta_{s}$ na Eq. \ref{eq:sigma_x_2}, é obtida a tensão normal nos planos quando a tensão de cisalhamento é $\tau_{\text{máx}}$, expressa na Eq. \ref{eq:tensao-normal-media}.
+	\begin{equation}
+		\sigma_{\text{méd}}=\frac{\sigma_x+\sigma_y}{2}
+		\label{eq:tensao-normal-media}
+	\end{equation}
+	Nessa condição, $\tau_{xy}=\tau_{\text{máx}}$ e a coordenada $\sigma$ é central, tal que $\sigma(\tau_{\text{máx}})=\frac{\sigma_{x}+\sigma_{y}}{2}$.
+	
+	\subsection{Círculo de Mohr}
+	
+	\section{Demonstração da transformada do tensor de Cauchy}
 	
 	Seja $\boldsymbol{\vec{v}}$ um vetor arbitrário. A matriz de rotação $\mathbf{R}$ pode ser usada duas finalidades distintas:
 	\begin{enumerate}
