@@ -73,7 +73,7 @@
 		\label{fig:estado-geral}
 	\end{figure}
 
-	O estado mais geral de tensões em dado ponto $Q$ pode ser representado pelo \textbf{tensor de tensões de Cauchy}. O mesmo estado poderá ser representado por um conjunto diferente de componentes se os eixos de coordenadas sofrerem rotação (Fig. \ref{fig:estado-geral-2}b).
+	O estado mais geral de tensões em dado ponto $Q$ pode ser representado pelo \textbf{tensor de tensões de Cauchy} (Eq. \ref{eq:cauchy}). O mesmo estado poderá ser representado por um conjunto diferente de componentes se os eixos de coordenadas sofrerem rotação (Fig. \ref{fig:estado-geral-2}b).
 	\begin{equation}
 	\boldsymbol{\sigma} =
 	\begin{bmatrix}
@@ -383,7 +383,7 @@
 	\end{equation}
 	\begin{equation}
 		\tau_{x'y'}=-\frac{\sigma_x-\sigma_y}{2}\, \sin 2\theta+\tau_{xy}\, \cos 2\theta
-		\label{eq:tau_xy_2}
+		\label{eq:tau_xy_2}.
 	\end{equation}
 
 	Se a tensão normal $\sigma_{y'}$ for necessária, ela poderá ser obtida pela simples substituição de ($\theta=\theta+\ang{90}$), na Eq. \ref{eq:sigma_x}, o que conduz a
@@ -476,6 +476,53 @@
 	Nessa condição, $\tau_{xy}=\tau_{\text{máx}}$ e a coordenada $\sigma$ é central, tal que $\sigma(\tau_{\text{máx}})=\frac{\sigma_{x}+\sigma_{y}}{2}$.
 	
 	\subsection{Círculo de Mohr}
+	
+	\begin{quote}
+		\small Solução gráfica para as equações de transformação da tensão no plano. A abordagem permite visualizar qual será a variação das componentes de tensão normal e de cisalhamento $\sigma_{x'}$ e $\tau_{x'y'}$, à medida que o plano em que agem é orientado.
+	\end{quote}
+
+	As Eq. \ref{eq:sigma_x_2} e \ref{eq:tau_xy_2} podem ser reescritas na forma
+	\begin{gather*}
+		\sigma_{x'}-\frac{\sigma_x+\sigma_y}{2}=\frac{\sigma_x-\sigma_y}{2}\, \cos 2\theta + \tau_{xy}\, \sin 2\theta \\
+		\tau_{x'y'}=-\frac{\sigma_x-\sigma_y}{2}\, \sin 2\theta + \tau_{xy}\, \cos 2\theta.
+	\end{gather*}
+	
+	O parâmetro $\theta$ pode ser eliminado elevando ambas as expressões ao quadrado e somando-as, no que resulta em
+	\begin{equation}
+		\left[\sigma_{x'}-\left(\frac{\sigma_x+\sigma_y}{2}\right)\right]^2+\tau_{x'y'}^2=\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2.
+		\label{eq:circulo-mohr-1}
+	\end{equation}
+	Para um problema específico, $\sigma_x$, $\sigma_y$ e $\tau_{xy}$ são constantes conhecidas. Logo, a Eq. \ref{eq:circulo-mohr-1} pode ser reescrita de forma mais compacta, como
+	\begin{equation}
+		(\sigma_{x'}-\sigma_{\text{méd}})^2 + \tau_{xy}^2=R^2
+		\label{eq:circulo-mohr-2}
+	\end{equation}
+
+	Se definidos os eixos de coordenadas com $\sigma$ positivo para a direita e $\tau_{xy}$ positiva para baixo, observa-se que a equação representa um círculo de raio $R$ e centro no eixo $\sigma$ no ponto $C\,(\sigma_{\text{méd}},\,0)$.
+	
+	Para determinar o raio $R$, é necessário conhecer ao menos um ponto no círculo, denominado \textbf{ponto de referência} $A$. Considerar-se, portanto, o caso em que o eixo $x'$ coincide com o eixo $x$.
+	\begin{gather*}
+		\theta=\ang{0},\quad \sigma_{x'}=\sigma_{x},\quad \tau_{x'y'}=\tau_{xy}
+	\end{gather*}
+	O valor de $R$ é obtido utilizando o teorema de Pitágoras ao triângulo sombreado na Fig. \ref{fig:circulo-mohr}. Uma vez determinado os pontos $C$ e $A$, o círculo pode ser obtido.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=10cm]{figure/circulo-mohr.png}
+		%\captionsetup{width=16cm}
+		\caption{\centering Construção geométrica do raio $R$ no círculo de Mohr.}
+		\label{fig:circulo-mohr}
+	\end{figure}
+
+	Geometricamente, o círculo de Mohr representa todas as combinações possíveis $(\sigma,\,\tau)$ obtidas ao rotacionar o plano\footnote{Em $C$, a tensão é puramente normal.}.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=9cm]{figure/circulo-mohr-2.png}
+		%\captionsetup{width=16cm}
+		\caption{\centering Construção geométrica do raio $R$ no círculo de Mohr.}
+		\label{fig:circulo-mohr-2}
+	\end{figure}
 	
 	\section{Demonstração da transformada do tensor de Cauchy}
 	
