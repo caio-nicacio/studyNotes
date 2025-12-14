@@ -134,8 +134,32 @@
 		f=\frac{2\pi}{\lambda'(t)},\quad \lambda'(t)\in \mathbb{R}, \quad [f]=\text{s}^{-1}.
 	\end{gather*}
 
-	\section{Integral de linha de primeira ordem}
-	\label{sec:integral-linha}
+	\section{Integral de linha de primeira espécie}
+	\label{sec:integral-linha-1}
+	
+	Seja $f:\Omega \subset \mathbb{R}^m\to \mathbb{R}^n$ uma função escalar aplicada ao longo de uma curva $\gamma:[a,b]\to \mathbb{R}^2$.
+	A expressão
+	\begin{equation*}
+		\int_{\gamma} f(x,y)\, ds
+	\end{equation*}
+	denota uma integral de linha de $f$ sobre $\gamma(t)$, onde $x=x(t)$ e $y=y(t)$. Imediatamente, tem-se que
+	\begin{equation}
+		\int_{\gamma} f(x(t),y(t))\, ds=\int_{\gamma} f(x(t),y(t))\, \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\, dt,
+		\label{eq:integral-primeira-especie}
+	\end{equation}
+	em que $ds$ é o comprimento infinitesimal de arco $\Delta s_i\to 0$ (Fig. \ref{fig:integral-primeira-especie}).
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=7cm]{figure/integral-primeira-especie.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Integral de linha de uma função $f:\Omega \subset \mathbb{R}^2$ aplicada a uma curva $C\to \Omega$.}
+		\label{fig:integral-primeira-especie}
+	\end{figure}
+	
+	Nota-se que, para definir a integral, não é necessário que $f$ esteja definida fora da imagem de $\gamma$.
+	
+	\section{Integral de linha de segunda espécie}
+	\label{sec:integral-linha-2}
 	
 	Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ um campo de forças definido no aberto $\Omega$ e que uma partícula descreva um movimento em $\Omega$ com função de posição $\gamma:[a, b]\to \Omega$. $\gamma(t)$ representa a posição da partícula 
 	no instante $t$.
@@ -171,7 +195,7 @@
 	\begin{equation*}
 		\tau\approx \sum_{i=1}^{n}\boldsymbol{\vec{F}}(\gamma(t_{i-1}))\cdot \frac{d\gamma}{dt}(t_{i-1})\, \Delta t_i.
 	\end{equation*}
-	Como a $\boldsymbol{\vec{F}}\cdot \frac{d\gamma}{dt}$ em $[a,b]$ é integrável e contínua no intervalo, segue que
+	Como $\boldsymbol{\vec{F}}\cdot \frac{d\gamma}{dt}$ em $[a,b]$ é integrável e contínua no intervalo, segue que
 	\begin{equation*}
 		\lim_{\text{máx}\, \Delta t_i\to 0} \tau=\lim_{\text{máx}\, \Delta t_i\to 0} \sum_{i=1}^{n} \boldsymbol{\vec{F}}(\gamma (t_{i-1}))\cdot [\gamma(t_i)-\gamma(t_{i-1})]=\int_{a}^{b} \boldsymbol{\vec{F}}(\gamma(t))\cdot\frac{d\gamma}{dt}(t)\, dt.
 	\end{equation*}
@@ -183,7 +207,7 @@
 	
 	Sejam $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$ e $\gamma\in C^1$. A integral de linha de $\boldsymbol{\vec{F}}$ sobre $\gamma$ é definida por
 	\begin{equation}
-		\int_{a}^{b} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{a}^{b} \left\langle \boldsymbol{\vec{F}}(\gamma(t)), \frac{\gamma(t)}{dt}\, dt \right\rangle.
+		\int_{a}^{b} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{a}^{b} \left\langle \boldsymbol{\vec{F}}(\gamma(t)), \frac{d\gamma(t)}{dt}\, dt \right\rangle.
 		\label{eq:integral-linha}
 	\end{equation}
 	
