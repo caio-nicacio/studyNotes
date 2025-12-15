@@ -17,8 +17,13 @@
 \usepackage{xcolor}
 \usepackage{siunitx}
 \usepackage{comment}
+\usepackage{amsthm}
 
+\theoremstyle{definition}
 \newtheorem{destaque}{Destaque}
+\newtheorem{obs}{Observação}
+\newtheorem{teorema}{Teorema}
+\newtheorem{exemplo}{Exemplo}
 
 % --------------------
 % CONFIGURAÇÕES
@@ -52,6 +57,7 @@
 	\newpage
 	
 	\section{Curvas e parametrização}
+	\label{sec:curvas}
 	
 	Seja $\gamma:[a, b]\to \Omega$. Uma parametrização de $\gamma$ é uma função, tal que,
 	\begin{gather*}
@@ -137,7 +143,7 @@
 	\section{Integral de linha de primeira espécie}
 	\label{sec:integral-linha-1}
 	
-	Seja $f:\Omega \subset \mathbb{R}^m\to \mathbb{R}^n$ uma função escalar aplicada ao longo de uma curva $\gamma:[a,b]\to \mathbb{R}^2$.
+	Seja $f:\Omega \subset \mathbb{R}^2\to \mathbb{R}$ uma função escalar aplicada ao longo de uma curva $\gamma:[a,b]\to \mathbb{R}^2$.
 	A expressão
 	\begin{equation*}
 		\int_{\gamma} f(x,y)\, ds
@@ -147,7 +153,7 @@
 		\int_{\gamma} f(x(t),y(t))\, ds=\int_{\gamma} f(x(t),y(t))\, \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\, dt,
 		\label{eq:integral-primeira-especie}
 	\end{equation}
-	em que $ds$ é o comprimento infinitesimal de arco $\Delta s_i\to 0$ (Fig. \ref{fig:integral-primeira-especie}).
+	onde $ds=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\, dt$ é o comprimento infinitesimal de arco $\Delta s_i\to 0$ (Fig. \ref{fig:integral-primeira-especie}).
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=7cm]{figure/integral-primeira-especie.jpeg}
@@ -155,8 +161,9 @@
 		\caption{\centering Integral de linha de uma função $f:\Omega \subset \mathbb{R}^2$ aplicada a uma curva $C\to \Omega$.}
 		\label{fig:integral-primeira-especie}
 	\end{figure}
-	
-	Nota-se que, para definir a integral, não é necessário que $f$ esteja definida fora da imagem de $\gamma$.
+	\begin{obs}
+		Nota-se que, para definir a integral, não é necessário que $f$ esteja definida fora da imagem de $\gamma$.
+	\end{obs}
 	
 	\section{Integral de linha de segunda espécie}
 	\label{sec:integral-linha-2}
@@ -184,7 +191,7 @@
 		\tau=\sum_{i=1}^{n} \boldsymbol{\vec{F}}(\gamma (t_{i-1}))\cdot [\gamma(t_i)-\gamma(t_{i-1})]
 		\label{eq:tau-1}
 	\end{equation}
-	seja uma boa aproximação para o trabalho $\tau$ realizado por $\boldsymbol{\vec{F}}$ de $\gamma(a)$ até $\gamma(b)$ e que esta aproximação seja tanto melhor quando menor for o intervalo máx $\Delta t_i$. Assim,
+	seja uma boa aproximação para o trabalho $\tau$ realizado por $\boldsymbol{\vec{F}}$ de $\gamma(a)$ até $\gamma(b)$ e que esta aproximação seja tanto melhor quanto menor for o intervalo máx $\Delta t_i$. Assim,
 	\begin{gather}
 		\frac{d\gamma}{dt}(t_{i-1})=\lim_{\Delta t_i\to 0} \frac{\gamma(t_i)-\gamma(t_{i-1})}{\Delta t_i} \nonumber\\
 		\frac{d\gamma}{dt}(t_{i-1})\approx \frac{\gamma(t_i)-\gamma(t_{i-1})}{\Delta t_i} \nonumber\\
@@ -204,13 +211,91 @@
 		\tau=\int_{a}^{b} \boldsymbol{\vec{F}}(\gamma(t))\cdot\frac{d\gamma}{dt}(t)\, dt,
 	\end{equation*}
 	em que $\int_{a}^{b} \boldsymbol{\vec{F}}\cdot d\gamma$ é a notação para indicar a integral $\int_{a}^{b} \boldsymbol{\vec{F}}(\gamma(t))\cdot\frac{d\gamma}{dt}(t)\, dt$.
-	
-	Sejam $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$ e $\gamma\in C^1$. A integral de linha de $\boldsymbol{\vec{F}}$ sobre $\gamma$ é definida por
+	\begin{teorema}
+		Sejam $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$ e $\gamma\in C^1$. A integral de linha de $\boldsymbol{\vec{F}}$ sobre $\gamma$ é definida por
+	\end{teorema}
 	\begin{equation}
-		\int_{a}^{b} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{a}^{b} \left\langle \boldsymbol{\vec{F}}(\gamma(t)), \frac{d\gamma(t)}{dt}\, dt \right\rangle.
+		\int_{a}^{b} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{a}^{b} \left\langle \boldsymbol{\vec{F}}(\gamma(t)), \frac{d\gamma}{dt}(t)\, dt \right\rangle.
 		\label{eq:integral-linha}
 	\end{equation}
 	
+	\subsection{Outra notação para a integral de linha de segunda espécie}
+	
+	Seja $\boldsymbol{\vec{F}}(x,y)=P(x,y)\, \mathbf{i}+Q(x,y)\, \mathbf{j}$, $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ e seja $\gamma:[a,b]\to \Omega$ uma curva de classe $C^1$, onde $x=x(t)$ e $y=y(t)$.
+	\begin{align*}
+		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma&=\int_{a}^{b}\left[P(x,y)\, \mathbf{i}+Q(x,y)\, \mathbf{j}\right]\cdot \left[\frac{dx}{dt}\, \mathbf{i}+\frac{dy}{dt}\, \mathbf{j}\right]\, dt \\
+		&=\int_{a}^{b}\left[P(x,y)\, \frac{dx}{dt}+Q(x,y)\, \frac{dy}{dt}\right]\, dt \\
+		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma&=\int_{a}^{b} P(x(t),y(t))\, dx + Q(x(t),y(t))\, dy
+	\end{align*}
+	
+	\subsection{Integral de linha sobre uma curva $\gamma$ por partes}
+	
+	Uma curva $\gamma:[a,b]\to \Omega\subseteq \mathbb{R}^n$ se diz classe $C^1$ por partes se for contínua e existirem uma partição $a=t_0<t_1<\cdots<t_n=b$ e curvas $\gamma_i:[t_{i-1},t_i]\to \Omega\subseteq \mathbb{R}^n$, $i=1,2,\cdots,n$, de classe $C^1$, tais que, $\forall t\in \left]t_{i-1}, t_i\right[$, $\gamma(t)=\gamma_i(t)$ (Fig. \ref{fig:gamma-partes}).
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=9.5cm]{figure/gamma-partes.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Curva $\gamma$ por partes.}
+		\label{fig:gamma-partes}
+	\end{figure}
+
+	Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n \to \mathbb{R}^n$ e seja $\gamma:[a,b]\to \Omega$ uma curva de classe $C^1$ por partes, tem-se
+	\begin{gather*}
+		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1 + \int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2 + \cdots + \int_{\gamma_{n-1}} \boldsymbol{\vec{F}}\cdot d\gamma_{n-1} + \int_{\gamma_n} \boldsymbol{\vec{F}}\cdot d\gamma_n \\
+		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma=\sum_{i=1}^{n}\int_{\gamma_i} \boldsymbol{\vec{F}}\cdot d\gamma_i.
+	\end{gather*}
+
+	\subsection{Mudança de parâmetro}
+	
+	Sejam $\gamma_1:[a,b]\to \Omega$ e $\gamma_2:[c,d]\to \Omega$ duas curvas classe $C^1$. Admitindo a existência de uma função $g:[c,d]\to \mathbb{R}$, $g\in C^1$, com $g'(u)>0$ em $]c,d[$ em $\text{Im}\, g=[a,b]$, tal que, $\forall u\in [c,d]$,
+	\begin{equation*}
+		\gamma_2(u)=\gamma_1(g(u))=\gamma_1(t),\quad t=g(u).
+	\end{equation*}
+	Portanto, $\gamma_2$ é obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que conserva a orientação}\footnote{O domínio de $\gamma_1$ é função do domínio de $\gamma_2$.}. Assim, $\exists g:D_{\gamma_1}\to D_{\gamma_2}$ de modo a igualar as duas curvas.
+	
+	Nota-se que, se $\gamma_2$ é obtida por uma mudança de parâmetro que conserva a orientação, então $\gamma_1$ e $\gamma_2$ têm a mesma imagem. Além disso, visto que
+	\begin{gather*}
+		\gamma_2'(u)=\frac{d\gamma_1}{dg}\, \frac{dg}{du}=\gamma_1'(t) \\
+		\gamma_2'(u)=\gamma_1'(g(u))\cdot g'(u),\quad g'(u)>0,
+	\end{gather*}
+	segue que $\gamma_1'(t)$ e $\gamma_2'(u)$ são paralelos e terão mesmo sentido (Fig. \ref{fig:mudanca-parametro}). 
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=9.5cm]{figure/mudanca-parametro.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Curva $\gamma$ por partes.}
+		\label{fig:mudanca-parametro}
+	\end{figure}
+	
+	\begin{obs}
+		Para curvas fechadas e periódicas, não importa a quantidade de vezes em que a imagem é percorrida, visto que a curva é apenas um conjunto de pontos. A parametrização é que define o modo em que a curva é descrita\footnote{No entanto, para casos gerais, a \textit{distância percorrida} deve ser a mesma.}.
+	\end{obs}
+
+	Se a condição $g'(u)>0$ em $]c,d[$ for substituída por $g'(u)<0$ em $]c,d[$, então $\gamma_2$ é obtida por uma \textbf{mudança de parâmetro que reverte a orientação}.
+	\begin{gather*}
+		g'(u)>0:\qquad \text{$t$ cresce segundo $u$} \\
+		g'(u)<0:\qquad \text{$t$ decresce segundo $u$}
+	\end{gather*}
+	O vetor tangente na Fig. \ref{fig:mudanca-parametro} pode representar a velocidade: quanto maior $g'(u)$, maior será a velocidade de percurso em $\gamma_2$. Logo, $g(u)$ é uma função usada para reparametrizar uma curva, quando necessário\footnote{Tal como $\lambda$, visto na Seção \ref{sec:curvas}.}.
+	\begin{teorema}
+		Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$ um campo vetorial e sejam $\gamma_1:[a,b]\to \Omega$ e $\gamma_2:[c,d]\to \Omega$ duas curvas de classe $C^1$.
+	\end{teorema}
+	\begin{enumerate}
+		\item Se $\gamma_2$ for obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que conserva a orientação},
+		\begin{equation*}
+			\int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2=\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1
+		\end{equation*}
+	
+		\item Se $\gamma_2$ for obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que reverte a orientação},
+		\begin{equation*}
+			\int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2=-\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1
+		\end{equation*}
+	\end{enumerate}
+
+	\begin{exemplo}
+		Seja $\gamma_1(t)=(\cos t, \sin t)$, $t\in [0,2\pi]$. Define-se $g(u)=2u$, $u\in [0,\pi]$.
+	\end{exemplo}
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
