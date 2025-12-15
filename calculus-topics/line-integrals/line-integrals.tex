@@ -20,7 +20,6 @@
 \usepackage{amsthm}
 
 \theoremstyle{definition}
-\newtheorem{destaque}{Destaque}
 \newtheorem{obs}{Observação}
 \newtheorem{teorema}{Teorema}
 \newtheorem{exemplo}{Exemplo}
@@ -116,11 +115,11 @@
 		\label{fig:curvas-circulo}
 	\end{figure}
 	
-	A Figura \ref{fig:gamma-r2} é projeção de $\gamma$ no $\mathbb{R}^2$, descrita por várias parametrizações. O eixo $z$ na Fig. \ref{fig:curvas-circulo} é o tempo, enquanto $\lambda(t)$ em $\boldsymbol{\vec{r}}(\lambda(t))=(\cos \lambda(t), \sin \lambda(t))$ governa a velocidade em função do tempo\footnote{A quantidade de vezes no qual a curva foi percorrida em um mesmo intervalo $\Delta t$.}.
+	A Figura \ref{fig:gamma-r2} é a projeção de $\gamma$ no $\mathbb{R}^2$, descrita por várias parametrizações. O eixo $z$ na Fig. \ref{fig:curvas-circulo} é o tempo, enquanto $\lambda(t)$, em $\boldsymbol{\vec{r}}(\lambda(t))=(\cos \lambda(t), \sin \lambda(t))$, governa a velocidade em função do tempo\footnote{A quantidade de vezes no qual a curva foi percorrida em um mesmo intervalo $\Delta t$.}.
 	
-	\begin{destaque}
+	\begin{obs}
 		$\gamma$ é um conjunto de pontos no espaço $\mathbb{R}^n$, em que a parametrização é uma maneira específica de descrever uma ordem para visitar esses pontos.
-	\end{destaque}
+	\end{obs}
 	
 	\begin{figure}[h!]
 		\centering
@@ -168,8 +167,10 @@
 	\section{Integral de linha de segunda espécie}
 	\label{sec:integral-linha-2}
 	
-	Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ um campo de forças definido no aberto $\Omega$ e que uma partícula descreva um movimento em $\Omega$ com função de posição $\gamma:[a, b]\to \Omega$. $\gamma(t)$ representa a posição da partícula 
-	no instante $t$.
+	\begin{teorema}
+		Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ um campo de forças definido no aberto $\Omega$ e que uma partícula descreva um movimento em $\Omega$ com função de posição $\gamma:[a, b]\to \Omega$. $\gamma(t)$ representa a posição da partícula 
+		no instante $t$.
+	\end{teorema}
 	
 	Se $\boldsymbol{\vec{F}}$ for constante e a imagem de $\gamma$ um segmento, o trabalho, $\tau$, realizado por $\boldsymbol{\vec{F}}$ de $\gamma(a)$ até $\gamma(b)$ é, por definição, o produto escalar de $\boldsymbol{\vec{F}}$ pelo deslocamento $\gamma(b)-\gamma(a)$.
 	\begin{gather*}
@@ -231,6 +232,12 @@
 	\subsection{Integral de linha sobre uma curva $\gamma$ por partes}
 	
 	Uma curva $\gamma:[a,b]\to \Omega\subseteq \mathbb{R}^n$ se diz classe $C^1$ por partes se for contínua e existirem uma partição $a=t_0<t_1<\cdots<t_n=b$ e curvas $\gamma_i:[t_{i-1},t_i]\to \Omega\subseteq \mathbb{R}^n$, $i=1,2,\cdots,n$, de classe $C^1$, tais que, $\forall t\in \left]t_{i-1}, t_i\right[$, $\gamma(t)=\gamma_i(t)$ (Fig. \ref{fig:gamma-partes}).
+	
+	Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n \to \mathbb{R}^n$ e seja $\gamma:[a,b]\to \Omega$ uma curva de classe $C^1$ por partes, tem-se
+	\begin{gather*}
+		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1 + \int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2 + \cdots + \int_{\gamma_{n-1}} \boldsymbol{\vec{F}}\cdot d\gamma_{n-1} + \int_{\gamma_n} \boldsymbol{\vec{F}}\cdot d\gamma_n \\
+		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma=\sum_{i=1}^{n}\int_{\gamma_i} \boldsymbol{\vec{F}}\cdot d\gamma_i.
+	\end{gather*}
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=9.5cm]{figure/gamma-partes.jpeg}
@@ -239,19 +246,13 @@
 		\label{fig:gamma-partes}
 	\end{figure}
 
-	Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n \to \mathbb{R}^n$ e seja $\gamma:[a,b]\to \Omega$ uma curva de classe $C^1$ por partes, tem-se
-	\begin{gather*}
-		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma=\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1 + \int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2 + \cdots + \int_{\gamma_{n-1}} \boldsymbol{\vec{F}}\cdot d\gamma_{n-1} + \int_{\gamma_n} \boldsymbol{\vec{F}}\cdot d\gamma_n \\
-		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma=\sum_{i=1}^{n}\int_{\gamma_i} \boldsymbol{\vec{F}}\cdot d\gamma_i.
-	\end{gather*}
-
 	\subsection{Mudança de parâmetro}
 	
 	Sejam $\gamma_1:[a,b]\to \Omega$ e $\gamma_2:[c,d]\to \Omega$ duas curvas classe $C^1$. Admitindo a existência de uma função $g:[c,d]\to \mathbb{R}$, $g\in C^1$, com $g'(u)>0$ em $]c,d[$ em $\text{Im}\, g=[a,b]$, tal que, $\forall u\in [c,d]$,
 	\begin{equation*}
 		\gamma_2(u)=\gamma_1(g(u))=\gamma_1(t),\quad t=g(u).
 	\end{equation*}
-	Portanto, $\gamma_2$ é obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que conserva a orientação}\footnote{O domínio de $\gamma_1$ é função do domínio de $\gamma_2$.}. Assim, $\exists g:D_{\gamma_1}\to D_{\gamma_2}$ de modo a igualar as duas curvas.
+	Portanto, $\gamma_2$ é obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que conserva a orientação}\footnote{O domínio de $\gamma_1$ é função do domínio de $\gamma_2$.}. Assim, $\exists g:D_{\gamma_2}\to D_{\gamma_1}$ de modo a igualar as duas curvas.
 	
 	Nota-se que, se $\gamma_2$ é obtida por uma mudança de parâmetro que conserva a orientação, então $\gamma_1$ e $\gamma_2$ têm a mesma imagem. Além disso, visto que
 	\begin{gather*}
@@ -284,18 +285,57 @@
 	\begin{enumerate}
 		\item Se $\gamma_2$ for obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que conserva a orientação},
 		\begin{equation*}
-			\int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2=\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1
+			\int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2=\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1.
 		\end{equation*}
 	
 		\item Se $\gamma_2$ for obtida de $\gamma_1$ por uma \textbf{mudança de parâmetro que reverte a orientação},
 		\begin{equation*}
-			\int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2=-\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1
+			\int_{\gamma_2} \boldsymbol{\vec{F}}\cdot d\gamma_2=-\int_{\gamma_1} \boldsymbol{\vec{F}}\cdot d\gamma_1.
 		\end{equation*}
 	\end{enumerate}
 
 	\begin{exemplo}
 		Seja $\gamma_1(t)=(\cos t, \sin t)$, $t\in [0,2\pi]$. Define-se $g(u)=2u$, $u\in [0,\pi]$.
 	\end{exemplo}
+	$\gamma_1$ descreve uma curva segundo um parâmetro $t$. A função $g:D_{\gamma_2}\to D_{\gamma_1}$ altera o parâmetro, associando a cada $u \in [0,\pi]$, um valor $t=g(u)$.
+	\begin{gather*}
+		\gamma_2(u)=\gamma_1(g(u))=\gamma_1(t) \\
+		\gamma_2(u)=(\cos 2u, \sin 2u)
+	\end{gather*}
+	$\gamma_2(u)$ é uma nova parametrização, com a mesma imagem, mas com o \textbf{dobro de velocidade}\footnote{Mapeando os valores de $t$ e $u$, sob o mesmo incremento $\Delta=t_{i+1}-t_{i}=u_{k+1}-u_{k}$, $\gamma_2(u)=\gamma_1(g(u))$ será mais rápido que $\gamma_1(t)$.}.
+	
+	Para que a mudança de parâmetro seja válida, a relação
+	\begin{equation*}
+		\gamma_2'(u)=\gamma_1'(g(u))\cdot g'(u)
+	\end{equation*}
+	deve ser satisfeita. Neste caso, $\gamma_1(g(u))$ é $g'(u)$ vezes mais rápido que $\gamma_1(t)$ sob o mesmo incremento $\Delta$.
+	
+	O propósito da mudança de parâmetro reside no fato de que, em vez de $t$ ser a variável independente, o seu crescimento irá depender de outro parâmetro, cujo incremento irá contribuir para o incremento de $t$, $\Delta t=g(u_{i+1})-g(u_i)$\footnote{Se $\Delta u$ for suficientemente pequeno, $\Delta t\approx g'(u)\, \Delta u$.}.
+	
+	\begin{exemplo}
+		Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ e sejam $\gamma_1(t)=(t,t^2)$, $t\in [0,1]$ e $\gamma_2(u)=\left(\frac{u}{2},\frac{u^2}{4}\right)$, $u\in [0,2]$ curvas parametrizadas com mesma imagem.
+	\end{exemplo}
+	Considere a igualdade
+	\begin{equation*}
+		\int_{\gamma_2}\boldsymbol{\vec{F}}\cdot d\gamma_2=\int_{\gamma_1}\boldsymbol{\vec{F}}\cdot d\gamma_1
+	\end{equation*}
+	e justifique-a.
+	
+	Para que a igualdade seja satisfeita, ambas as curvas devem der de classe $C^1$ e suas derivadas contínuas no domínio, assim como $g:[c,d]\to \mathbb{R}$, $g':]c,d[\to \mathbb{R}$.
+	\begin{gather*}
+		\frac{d\gamma_1}{dt}=(1, 2t),\quad \frac{d\gamma_2}{du}=\left(\frac{1}{2}, \frac{u}{2}\right) \\
+		t=g(u)=\frac{u}{2},\quad t'=g'(u)=\frac{1}{2}
+	\end{gather*}
+	Como $\gamma_2'(u)=\gamma_1'(g(u))\cdot g'(u)$ deve ser satisfeita, segue que
+	\begin{align*}
+		\left(\frac{1}{2}, \frac{u}{2}\right)&=\frac{1}{2}\cdot (1,2t) \\
+		\left(\frac{1}{2}, \frac{u}{2}\right)&=\left(\frac{1}{2}, t\right)\, \longrightarrow\, \text{a igualdade é satisfeita.}
+	\end{align*}
+	Além disso, por definição,
+	\begin{gather*}
+		\int_{\gamma_1}\boldsymbol{\vec{F}}(\gamma_1(t))\cdot \gamma_1'(t)\, dt=	\int_{\gamma_1}\boldsymbol{\vec{F}}(\gamma_1(g(u)))\cdot [\gamma_1'(g(u))\cdot g'(u)]\, dt \\
+		\int_{\gamma_1}\boldsymbol{\vec{F}}(\gamma_1(t))\cdot \gamma_1'(t)\, dt=\int_{\gamma_2}\boldsymbol{\vec{F}}(\gamma_2(u))\cdot \gamma_2'(u)\, dt.
+	\end{gather*}
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
