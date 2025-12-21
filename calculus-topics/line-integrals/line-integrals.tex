@@ -77,14 +77,14 @@
 	\end{figure}
 
 	As parametrizações
-	\begin{align*}
-		\boldsymbol{\vec{r}}_1&=(\cos t, \sin t, t)\\
-		\boldsymbol{\vec{r}}_2&=(\cos 2t, \sin 2t, t) \\
-		\boldsymbol{\vec{r}}_3&=(\cos t, \sin t, t/2) \\
-		\boldsymbol{\vec{r}}_4&=(\cos 2t, \sin 2t, t/2),
-	\end{align*}
-	associadas às Fig. \ref{fig:curvas-circulo}a, \ref{fig:curvas-circulo}b, \ref{fig:curvas-circulo}c e \ref{fig:curvas-circulo}d, respectivamente, descrevem a mesma projeção da curva $\gamma=\{(x,y):x^2+y^2=1\}$, $\gamma:[a,b]\to \Omega$ no plano $\mathbb{R}^2$, que passam pelos mesmos pontos $(x,y)$. 
-	
+	\begin{gather*}
+		\boldsymbol{\vec{r}}_1=(\cos t, \sin t, t)\\
+		\boldsymbol{\vec{r}}_2=(\cos 2t, \sin 2t, t) \\
+		\boldsymbol{\vec{r}}_3=(\cos t, \sin t, t/2) \\
+		\boldsymbol{\vec{r}}_4=(\cos 2t, \sin 2t, t/2),
+	\end{gather*}
+	associadas às Fig. \ref{fig:curvas-circulo}a, \ref{fig:curvas-circulo}b, \ref{fig:curvas-circulo}c e \ref{fig:curvas-circulo}d, respectivamente, apresentam a mesma projeção da curva $\gamma=\{(x,y):x^2+y^2=1\}$, $\gamma:[a,b]\to \Omega$ no plano $\mathbb{R}^2$, que passam pelos mesmos pontos $(x,y)$. 
+
 	\begin{figure}[h!]
 		\begin{minipage}[b]{0.24\textwidth}
 			\centering
@@ -172,7 +172,7 @@
 		no instante $t$.
 	\end{teorema}
 	
-	Se $\boldsymbol{\vec{F}}$ for constante e a imagem de $\gamma$ um segmento, o trabalho, $\tau$, realizado por $\boldsymbol{\vec{F}}$ de $\gamma(a)$ até $\gamma(b)$ é, por definição, o produto escalar de $\boldsymbol{\vec{F}}$ pelo deslocamento $\gamma(b)-\gamma(a)$.
+	Se $\boldsymbol{\vec{F}}$ for constante e a imagem de $\gamma$ um segmento, o trabalho $\tau$ realizado por $\boldsymbol{\vec{F}}$ de $\gamma(a)$ até $\gamma(b)$ é, por definição, o produto escalar de $\boldsymbol{\vec{F}}$ pelo deslocamento $\gamma(b)-\gamma(a)$.
 	\begin{gather*}
 		\tau=\boldsymbol{\vec{F}}\cdot [\gamma(b)-\gamma(a)] \\
 		\tau=|\boldsymbol{\vec{F}}|\, |\gamma(b)-\gamma(a)|\, \cos \theta
@@ -194,7 +194,7 @@
 	\end{equation}
 	seja uma boa aproximação para o trabalho $\tau$ realizado por $\boldsymbol{\vec{F}}$ de $\gamma(a)$ até $\gamma(b)$ e que esta aproximação seja tanto melhor quanto menor for o intervalo máx $\Delta t_i$. Assim,
 	\begin{gather}
-		\frac{d\gamma}{dt}(t_{i-1})=\lim_{\Delta t_i\to 0} \frac{\gamma(t_i)-\gamma(t_{i-1})}{\Delta t_i} \nonumber\\
+		\frac{d\gamma}{dt}(t_{i-1})=\lim_{\text{máx}\, \Delta t_i\to 0} \frac{\gamma(t_i)-\gamma(t_{i-1})}{\Delta t_i} \nonumber\\
 		\frac{d\gamma}{dt}(t_{i-1})\approx \frac{\gamma(t_i)-\gamma(t_{i-1})}{\Delta t_i} \nonumber\\
 		\gamma(t_i)-\gamma(t_{i-1})\approx \frac{d\gamma}{dt}(t_{i-1})\, \Delta t_i.
 		\label{eq:tau-2}
@@ -229,7 +229,7 @@
 		\int_{\gamma} \boldsymbol{\vec{F}}\cdot d\gamma&=\int_{a}^{b} P(x(t),y(t))\, dx + Q(x(t),y(t))\, dy
 	\end{align*}
 	
-	\subsection{Integral de linha sobre uma curva $\gamma$ por partes}
+	\subsection{Integral de linha de segunda espécie sobre uma curva $\gamma$ por partes}
 	
 	Uma curva $\gamma:[a,b]\to \Omega\subseteq \mathbb{R}^n$ se diz classe $C^1$ por partes se for contínua e existirem uma partição $a=t_0<t_1<\cdots<t_n=b$ e curvas $\gamma_i:[t_{i-1},t_i]\to \Omega\subseteq \mathbb{R}^n$, $i=1,2,\cdots,n$, de classe $C^1$, tais que, $\forall t\in \left]t_{i-1}, t_i\right[$, $\gamma(t)=\gamma_i(t)$ (Fig. \ref{fig:gamma-partes}).
 	
@@ -265,12 +265,12 @@
 		\centering
 		\includegraphics[width=9.5cm]{figure/mudanca-parametro.jpeg}
 		%\captionsetup{width=16cm}
-		\caption{\centering Curva $\gamma$ por partes.}
+		\caption{\centering Vetor tangente às curvas $\gamma_1(t)$ e $\gamma_2(u)$ no ponto $t=g(u)$.}
 		\label{fig:mudanca-parametro}
 	\end{figure}
 	
 	\begin{obs}
-		Para curvas fechadas e periódicas, não importa a quantidade de vezes em que a imagem é percorrida, visto que a curva é apenas um conjunto de pontos. A parametrização é que define o modo em que a curva é descrita\footnote{No entanto, para casos gerais, a \textit{distância percorrida} deve ser a mesma.}.
+		Para curvas fechadas e periódicas, não importa a quantidade de vezes em que a imagem é percorrida, visto que a curva é apenas um conjunto de pontos. A parametrização é que define o modo em que a curva é descrita\footnote{No entanto, para casos gerais, a distância percorrida (tamanho do domínio) deve ser a mesma.}.
 	\end{obs}
 
 	Se a condição $g'(u)>0$ em $]c,d[$ for substituída por $g'(u)<0$ em $]c,d[$, então $\gamma_2$ é obtida por uma \textbf{mudança de parâmetro que reverte a orientação}.
@@ -321,7 +321,7 @@
 	\end{equation*}
 	e justifique-a.
 	
-	Para que a igualdade seja satisfeita, ambas as curvas devem der de classe $C^1$ e suas derivadas contínuas no domínio, assim como $g:[c,d]\to \mathbb{R}$, $g':]c,d[\to \mathbb{R}$.
+	Para que a igualdade seja satisfeita, ambas as curvas devem ser de classe $C^1$ e suas derivadas contínuas no domínio, assim como $g:[c,d]\to \mathbb{R}$, $g':]c,d[\to \mathbb{R}$.
 	\begin{gather*}
 		\frac{d\gamma_1}{dt}=(1, 2t),\quad \frac{d\gamma_2}{du}=\left(\frac{1}{2}, \frac{u}{2}\right) \\
 		t=g(u)=\frac{u}{2},\quad t'=g'(u)=\frac{1}{2}
