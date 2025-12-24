@@ -66,7 +66,7 @@
 	A seleção conveniente do sistema de referência é de fundamental importância para o estabelecimento de equações algébricas. A depender do sistema, o escoamento pode ser tratado como transiente ou estacionário, conduzindo à ideia de que o movimento de uma partícula fluida $P$ seja referido a um sistema de coordenadas que, por sua vez, também esteja em movimento. A Figura \ref{fig:sistema-coordenadas} apresenta o \textbf{sistema relativo de coordenadas}, o qual combina movimentos de rotação e translação em relação a um sistema fixo, chamado \textbf{sistema absoluto}.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.48\textwidth]{figure/sistema-coordenadas.jpeg}
+		\includegraphics[width=0.6\textwidth]{figure/sistema-coordenadas.png}
 		%\captionsetup{width=16cm}
 		\caption{\centering Sistema de coordenadas relativo ao sistema absoluto.}
 		\label{fig:sistema-coordenadas}
@@ -74,57 +74,134 @@
 
 	A relação entre os vetores posição nos dois sistemas é dada por
 	\begin{equation}
-		\boldsymbol{\vec{R}}=\boldsymbol{\vec{R}}_0+\boldsymbol{\vec{r}},
+		\vec{\boldsymbol{R}}=\vec{\boldsymbol{R}}_0+\vec{\boldsymbol{r}},
 		\label{eq:vetor-posicao}
 	\end{equation}
-	onde $\boldsymbol{\vec{R}}$ é o vetor posição da partícula fluida $P$ em relação à origem do sistema absoluto; $\boldsymbol{\vec{R}}_0$ é o vetor posição da origem $O'$ em relação à origem dos sistema absoluto, $O$; $\boldsymbol{\vec{r}}$ é o vetor posição da partícula fluida $P$ com relação à origem $O'$ do sistema relativo.
+	onde $\vec{\boldsymbol{R}}$ é o vetor posição da partícula fluida $P$ em relação à origem do sistema absoluto; $\vec{\boldsymbol{R}}_0$ é o vetor posição da origem $O'$ em relação à origem dos sistema absoluto, $O$; $\vec{\boldsymbol{r}}$ é o vetor posição da partícula fluida $P$ com relação à origem $O'$ do sistema relativo.
 	
-	Designando-se os vetores unitários do sistema relativo de coordenadas por $\mathbf{i}'$, $\mathbf{j}'$ e $\mathbf{k}'$, e as componentes do vetor posição $\boldsymbol{\vec{r}}$ no sistema relativo por $x'$, $y'$ e $z'$, o vetor $\boldsymbol{\vec{r}}$ é expresso por
+	Designando-se os vetores unitários do sistema relativo de coordenadas por $\mathbf{i}'$, $\mathbf{j}'$ e $\mathbf{k}'$, e as componentes do vetor posição $\vec{\boldsymbol{r}}$ no sistema relativo por $x'$, $y'$ e $z'$, o vetor $\vec{\boldsymbol{r}}$ é expresso por
 	\begin{equation}
-		\boldsymbol{\vec{r}}=x'\, \mathbf{i}'+y'\, \mathbf{j}'+z'\, \mathbf{k}'.
+		\vec{\boldsymbol{r}}=x'\, \mathbf{i}'+y'\, \mathbf{j}'+z'\, \mathbf{k}'.
 		\label{eq:vetor-r}
 	\end{equation}
 	Derivando a Eq. \ref{eq:vetor-posicao} em relação ao tempo $t$, obtêm-se
 	\begin{equation*}
-		\boldsymbol{\vec{c}}=\frac{d\boldsymbol{\vec{R}}}{dt}=\frac{d\boldsymbol{\vec{R}}_0}{dt}+\frac{d\boldsymbol{\vec{r}}}{dt}.
+		\vec{\boldsymbol{c}}=\frac{d\vec{\boldsymbol{R}}}{dt}=\frac{d\vec{\boldsymbol{R}}_0}{dt}+\frac{d\vec{\boldsymbol{r}}}{dt}.
 	\end{equation*}
-	As componentes escalares e os vetores unitários de $\boldsymbol{\vec{r}}$ variam em função do tempo. Logo,
+	As componentes escalares e os vetores unitários de $\vec{\boldsymbol{r}}$ variam em função do tempo. Logo,
 	\begin{align}
-		\frac{d\boldsymbol{\vec{r}}}{dt}&=\mathbf{i}'\, \frac{dx'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+y'\, \frac{d\mathbf{j}}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+z'\, \frac{d\mathbf{k}}{dt} \nonumber\\
+		\frac{d\vec{\boldsymbol{r}}}{dt}&=\mathbf{i}'\, \frac{dx'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+y'\, \frac{d\mathbf{j}}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+z'\, \frac{d\mathbf{k}}{dt} \nonumber\\
 		&=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+y'\, \frac{d\mathbf{j}}{dt}+z'\, \frac{d\mathbf{k}}{dt} \nonumber\\
-		\frac{d\boldsymbol{\vec{r}}}{dt}&=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+\boldsymbol{\vec{\omega}}\times\boldsymbol{\vec{r}}
+		\frac{d\vec{\boldsymbol{r}}}{dt}&=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+\vec{\boldsymbol{\omega}}\times\vec{\boldsymbol{r}}
+		\label{eq:derivada-r}
 	\end{align}
 	Durante um intervalo infinitesimal $dt$, o corpo está sujeito a uma rotação infinitesimal $d\theta$. Logo, quando um corpo rígido sofre uma rotação $d\theta$ em torno de um eixo definido por um vetor unitário $\mathbf{n}$, a rotação é representada por
 	\begin{equation*}
-		d\boldsymbol{\vec{\theta}}=d\theta\,\mathbf{n},
+		d\vec{\boldsymbol{\theta}}=d\theta\,\mathbf{n},
 	\end{equation*}
-	ou seja, um vetor cuja direção é o eixo de rotação e cujo módulo é o ângulo infinitesimal $d\theta$ (Fig. \ref{fig:rotacao-1}).
+	ou seja, um vetor cuja direção é o eixo de rotação, e módulo indica o ângulo infinitesimal $d\theta$ (Fig. \ref{fig:rotacao-1}).
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.48\textwidth]{figure/rotacao-1.jpeg}
 		%\captionsetup{width=16cm}
-		\caption{\centering Deslocamento linear infinitesimal $d\boldsymbol{\vec{r}}$ do vetor $\boldsymbol{\vec{r}}$ relativo a uma rotação $d\boldsymbol{\vec{\theta}}$.}
+		\caption{\centering Deslocamento linear infinitesimal $d\vec{\boldsymbol{r}}$ do vetor $\vec{\boldsymbol{r}}$ relativo a uma rotação $d\vec{\boldsymbol{\theta}}$.}
 		\label{fig:rotacao-1}
 	\end{figure}
 	
-	Conforme $d\theta \to 0$, $d\boldsymbol{\vec{S}}\to d\boldsymbol{\vec{r}}$, de modo que
+	Conforme $d\theta \to 0$, $d\vec{\boldsymbol{S}}\to d\vec{\boldsymbol{r}}$, de modo que
 	\begin{equation*}
-		\frac{d\boldsymbol{\vec{S}}}{d\theta}=\boldsymbol{\vec{r}}\quad \therefore\quad \frac{d\boldsymbol{\vec{r}}}{d\theta}=\boldsymbol{\vec{r}}.
+		\frac{d\vec{\boldsymbol{S}}}{d\theta}=\vec{\boldsymbol{r}'}\quad \longrightarrow \quad \frac{d\vec{\boldsymbol{r}'}}{d\theta}=\vec{\boldsymbol{r}'}.
 	\end{equation*}
-	O vetor $d\boldsymbol{\vec{\theta}}$ é orientado ao longo do eixo instantâneo de rotação e, portanto, indica o plano de interação entre $d\boldsymbol{\vec{r}}$ e $\boldsymbol{\vec{r}}$, perpendicular a $d\boldsymbol{\vec{\theta}}$\footnote{A rotação ocorre em um plano fixo normal a $\mathbf{n}$.}.
-	
-	A variação infinitesimal da posição de $P$, $d\boldsymbol{\vec{r}}$ é perpendicular tanto a $\mathbf{n}$ quanto a $\boldsymbol{\vec{r}}$ e pode ser expressa vetorialmente como
-	\begin{equation*}
-		d\boldsymbol{\vec{r}}=d\boldsymbol{\vec{\theta}}\times \boldsymbol{\vec{r}}
-	\end{equation*}
+	O vetor $d\vec{\boldsymbol{\theta}}$ é orientado ao longo do eixo instantâneo de rotação e, portanto, indica o plano de interação entre $d\vec{\boldsymbol{r}}$ e $\vec{\boldsymbol{r}}$, perpendicular a $d\vec{\boldsymbol{\theta}}$\footnote{A rotação ocorre em um plano fixo normal a $\mathbf{n}$.}.
 	\begin{figure}[h!]
+		\begin{minipage}[b]{0.48\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figure/rotacao-3.png}
+			\\[-1ex]\small (a)
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.48\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figure/rotacao-2.png}
+			\\[-1ex]\small (b)
+		\end{minipage}
 		\centering
-		\includegraphics[width=0.48\textwidth]{figure/rotacao-2.png}
 		%\captionsetup{width=16cm}
-		\caption{\centering Deslocamento linear infinitesimal $d\boldsymbol{\vec{r}}$ do vetor $\boldsymbol{\vec{r}}$ relativo a uma rotação $d\boldsymbol{\vec{\theta}}$.}
+		\caption{\centering Representação do estado geral de tensões em um ponto $Q$: (a) no sistema de coordenadas original e (b) no sistema resultante de uma rotação em relação ao sistema inicial.}
 		\label{fig:rotacao-2}
 	\end{figure}
+
+	A variação infinitesimal da posição de $P$, $d\vec{\boldsymbol{r}'}$ é perpendicular tanto a $\mathbf{n}$ quanto a $\vec{\boldsymbol{r}'}$ e pode ser expressa vetorialmente, de acordo com a Fig. \ref{fig:rotacao-1}a, como
+	\begin{equation*}
+		d\vec{\boldsymbol{r}}=d\vec{\boldsymbol{\theta}}\times \vec{\boldsymbol{r}'}
+	\end{equation*}
+	ou, em sua forma escalar,
+	\begin{equation*}
+		|d\vec{\boldsymbol{r}'}|=|d\vec{\boldsymbol{\theta}}|\, |\vec{\boldsymbol{r}'}|\, \cos \varphi
+	\end{equation*}
+	em que $\varphi$ é o ângulo descrito entre $d\vec{\boldsymbol{\theta}}$ e $\vec{\boldsymbol{r}'}$ (Fig. \ref{fig:rotacao-2}a).
 	
+	Seja $\mathbf{n}=\mathbf{i}$, $\mathbf{i}$ vetor unitário que orienta a direção do eixo $x$. O plano que abriga a interação entre os vetores $d\vec{\boldsymbol{r}'}$ e $\vec{\boldsymbol{r}'}$ será $yz$.
+	
+	Para valores infinitesimais de $\dot{\theta}(dt)=d\theta$, $d\vec{\boldsymbol{r}'}$ tende a ser perpendicular a $\vec{\boldsymbol{r}'}$, sendo sempre tangente ao aro de circunferência $dS=r'\, d\theta$ (Fig. \ref{fig:rotacao-2}b)\footnote{Isso contribui para a condição de perpendicularidade no produto vetorial $d\vec{\boldsymbol{\theta}}\times \vec{\boldsymbol{r}}=d\vec{\boldsymbol{r}}$.}.
+	
+	Uma vez que $d\vec{\boldsymbol{\theta}}=\vec{\boldsymbol{\omega}}\, dt$,
+	\begin{align*}
+		d\vec{\boldsymbol{r}'}&=d\vec{\boldsymbol{\theta}}\times \vec{\boldsymbol{r}'} \\
+		&=(\vec{\boldsymbol{\omega}}\, dt)\times \vec{\boldsymbol{r}'} \\
+		d\vec{\boldsymbol{r}'}&=dt\, (\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}'})
+	\end{align*}
+	e dividindo os termos por $dt$, obtêm-se
+	\begin{equation*}
+		\frac{d\vec{\boldsymbol{r}'}}{dt}=\vec{\boldsymbol{\omega}} \times \vec{\boldsymbol{r}'}
+	\end{equation*}
+	que corresponde à velocidade tangencial do vetor $\vec{\boldsymbol{r}}$ que descreve a circunferência no plano, e que está presente na Eq. \ref{eq:derivada-r}.
+	
+	\begin{obs}
+		(Vide Fig. \ref{fig:rotacao-4}) $d\theta$ deve ser suficientemente pequeno para satisfazer $d\vec{\boldsymbol{r}'} \perp  \vec{\boldsymbol{r}}, d\vec{\boldsymbol{\theta}}$; $\alpha\to \pi/2$.
+	\end{obs}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figure/rotacao-4.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Condição de perpendicularidade satisfeita, para $\alpha \to \pi/2$.}
+		\label{fig:rotacao-4}
+	\end{figure}
+	\begin{figure}[h!]
+		\begin{minipage}[b]{0.8\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figure/velocidade-angular-1.jpeg}
+			\\[-1ex]\small (a)
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.8\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figure/velocidade-angular-2.jpeg}
+			\\[-1ex]\small (b)
+		\end{minipage}
+		\centering
+		%\captionsetup{width=16cm}
+		\caption{\centering (a) Variação do vetor posição $\vec{\boldsymbol{r}}$ em relação ao sistema relativo de coordenadas e a (b) rotação dos versores do sistema relativo de coordenadas em relação ao sistema absoluto.}
+		\label{fig:velocidade-angular}
+	\end{figure}
+	$\vec{\boldsymbol{\omega}}$ designa a velocidade relativa da partícula fluida, que corresponde à variação temporal das coordenadas $x'$, $y'$ e $z'$ em relação aos eixos (Fig. \ref{fig:velocidade-angular}a).
+	\begin{equation}
+		\vec{\boldsymbol{\omega}}=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}
+		\label{eq:omega}
+	\end{equation}
+	Sabe-se que qualquer vetor fixado a um corpo que apresenta rotação a uma velocidade angular $\vec{\boldsymbol{\omega}}$ tem uma derivada temporal igual ao produto vetorial de $\vec{\boldsymbol{\omega}}$ com esse vetor. Logo, assumindo que
+	\begin{equation*}
+		\vec{\boldsymbol{r}'}=\mathbf{i}+\mathbf{j}+\mathbf{k}
+	\end{equation*}
+	é um vetor unitário, obtêm-se
+	\begin{equation*}
+		\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}'}=x'\, \frac{d\mathbf{i}}{dt}+y'\, \frac{d\mathbf{j}}{dt}+z'\, \frac{d\mathbf{k}}{dt}.
+	\end{equation*}
+	O termo $\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}}$ corresponde à variação temporal das posições angulares dos versores do sistema de coordenadas, segundo a Fig. \ref{fig:velocidade-angular}b.
+	\begin{gather*}
+		\frac{d\vec{\boldsymbol{r}}}{dt}=\mathbf{i}'\, \frac{dx'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+y'\, \frac{d\mathbf{j}}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+z'\, \frac{d\mathbf{k}}{dt} \\
+		\frac{d\vec{\boldsymbol{r}}}{dt}=\vec{\boldsymbol{w}}+x'\,(\vec{\boldsymbol{\omega}}\times \mathbf{i})+y'\,(\vec{\boldsymbol{\omega}}\times \mathbf{j})+z'\,(\vec{\boldsymbol{\omega}}\times \mathbf{k}) \\
+	\end{gather*}
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
@@ -152,7 +229,7 @@
 			\centering
 			\includegraphics[width=5.5cm]{figure/forca-plano-1.png}
 			%\captionsetup{width=16cm}
-			\caption{\centering Força $\boldsymbol{\vec{F}}$ aplicada em uma dada superfície.}
+			\caption{\centering Força $\vec{\boldsymbol{F}}$ aplicada em uma dada superfície.}
 			\label{fig:forca-plano-1}
 		\end{figure}
 	\end{comment}
