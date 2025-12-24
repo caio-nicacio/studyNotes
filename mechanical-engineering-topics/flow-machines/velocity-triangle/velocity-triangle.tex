@@ -85,15 +85,16 @@
 		\label{eq:vetor-r}
 	\end{equation}
 	Derivando a Eq. \ref{eq:vetor-posicao} em relação ao tempo $t$, obtêm-se
-	\begin{equation*}
+	\begin{equation}
 		\vec{\boldsymbol{c}}=\frac{d\vec{\boldsymbol{R}}}{dt}=\frac{d\vec{\boldsymbol{R}}_0}{dt}+\frac{d\vec{\boldsymbol{r}}}{dt}.
-	\end{equation*}
+		\label{eq:derivada-R}
+	\end{equation}
 	As componentes escalares e os vetores unitários de $\vec{\boldsymbol{r}}$ variam em função do tempo. Logo,
 	\begin{align}
 		\frac{d\vec{\boldsymbol{r}}}{dt}&=\mathbf{i}'\, \frac{dx'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+y'\, \frac{d\mathbf{j}}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+z'\, \frac{d\mathbf{k}}{dt} \nonumber\\
 		&=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+y'\, \frac{d\mathbf{j}}{dt}+z'\, \frac{d\mathbf{k}}{dt} \nonumber\\
 		\frac{d\vec{\boldsymbol{r}}}{dt}&=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+\vec{\boldsymbol{\omega}}\times\vec{\boldsymbol{r}}
-		\label{eq:derivada-r}
+		\label{eq:derivada-r-1}
 	\end{align}
 	Durante um intervalo infinitesimal $dt$, o corpo está sujeito a uma rotação infinitesimal $d\theta$. Logo, quando um corpo rígido sofre uma rotação $d\theta$ em torno de um eixo definido por um vetor unitário $\mathbf{n}$, a rotação é representada por
 	\begin{equation*}
@@ -170,25 +171,21 @@
 	\begin{figure}[h!]
 		\begin{minipage}[b]{0.8\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{figure/velocidade-angular-1.jpeg}
+			\includegraphics[width=\textwidth]{figure/velocidade-angular-2.jpeg}
 			\\[-1ex]\small (a)
 		\end{minipage}
 		\hfill
 		\begin{minipage}[b]{0.8\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{figure/velocidade-angular-2.jpeg}
+			\includegraphics[width=\textwidth]{figure/velocidade-angular-1.jpeg}
 			\\[-1ex]\small (b)
 		\end{minipage}
 		\centering
 		%\captionsetup{width=16cm}
-		\caption{\centering (a) Variação do vetor posição $\vec{\boldsymbol{r}}$ em relação ao sistema relativo de coordenadas e a (b) rotação dos versores do sistema relativo de coordenadas em relação ao sistema absoluto.}
+		\caption{\centering  (b) Rotação dos versores do sistema relativo de coordenadas em relação ao sistema absoluto e a(a) variação do vetor posição $\vec{\boldsymbol{r}}$ em relação ao sistema relativo.}
 		\label{fig:velocidade-angular}
 	\end{figure}
-	$\vec{\boldsymbol{\omega}}$ designa a velocidade relativa da partícula fluida, que corresponde à variação temporal das coordenadas $x'$, $y'$ e $z'$ em relação aos eixos (Fig. \ref{fig:velocidade-angular}a).
-	\begin{equation}
-		\vec{\boldsymbol{\omega}}=\mathbf{i}'\, \frac{dx'}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+\mathbf{k}'\, \frac{dz'}{dt}
-		\label{eq:omega}
-	\end{equation}
+	
 	Sabe-se que qualquer vetor fixado a um corpo que apresenta rotação a uma velocidade angular $\vec{\boldsymbol{\omega}}$ tem uma derivada temporal igual ao produto vetorial de $\vec{\boldsymbol{\omega}}$ com esse vetor. Logo, assumindo que
 	\begin{equation*}
 		\vec{\boldsymbol{r}'}=\mathbf{i}+\mathbf{j}+\mathbf{k}
@@ -197,11 +194,47 @@
 	\begin{equation*}
 		\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}'}=x'\, \frac{d\mathbf{i}}{dt}+y'\, \frac{d\mathbf{j}}{dt}+z'\, \frac{d\mathbf{k}}{dt}.
 	\end{equation*}
-	O termo $\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}}$ corresponde à variação temporal das posições angulares dos versores do sistema de coordenadas, segundo a Fig. \ref{fig:velocidade-angular}b.
-	\begin{gather*}
-		\frac{d\vec{\boldsymbol{r}}}{dt}=\mathbf{i}'\, \frac{dx'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+y'\, \frac{d\mathbf{j}}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+z'\, \frac{d\mathbf{k}}{dt} \\
-		\frac{d\vec{\boldsymbol{r}}}{dt}=\vec{\boldsymbol{w}}+x'\,(\vec{\boldsymbol{\omega}}\times \mathbf{i})+y'\,(\vec{\boldsymbol{\omega}}\times \mathbf{j})+z'\,(\vec{\boldsymbol{\omega}}\times \mathbf{k}) \\
-	\end{gather*}
+	O termo $\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}}$ corresponde à variação temporal das posições angulares dos versores do sistema de coordenadas, segundo a Fig. \ref{fig:velocidade-angular}a.
+	\begin{gather}
+		\frac{d\vec{\boldsymbol{r}}}{dt}=\mathbf{i}'\, \frac{dx'}{dt}+x'\, \frac{d\mathbf{i}}{dt}+\mathbf{j}'\, \frac{dy'}{dt}+y'\, \frac{d\mathbf{j}}{dt}+\mathbf{k}'\, \frac{dz'}{dt}+z'\, \frac{d\mathbf{k}}{dt} \nonumber\\
+		\frac{d\vec{\boldsymbol{r}}}{dt}=\vec{\boldsymbol{w}}+x'\,(\vec{\boldsymbol{\omega}}\times \mathbf{i})+y'\,(\vec{\boldsymbol{\omega}}\times \mathbf{j})+z'\,(\vec{\boldsymbol{\omega}}\times \mathbf{k}) \nonumber\\
+		\frac{d\vec{\boldsymbol{r}}}{dt}=\vec{\boldsymbol{w}}+\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}}
+		\label{eq:derivada-r-2}
+	\end{gather}
+	$\vec{\boldsymbol{w}}$ designa a velocidade relativa da partícula fluida, que corresponde à variação temporal das coordenadas $x'$, $y'$ e $z'$ em relação aos eixos (Fig. \ref{fig:velocidade-angular}b).
+	
+	Dessa forma, combinando as Eq. \ref{eq:derivada-R} e \ref{eq:derivada-r-2}, é possível obter
+	\begin{equation}
+		\frac{d\vec{\boldsymbol{R}}}{dt}=\frac{d\vec{\boldsymbol{R}}_0}{dt}+\vec{\boldsymbol{w}}+\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}}.
+		\label{eq:derivada-r-3}
+	\end{equation}
+	O produto vetorial $\vec{\boldsymbol{\omega}}\times \vec{\boldsymbol{r}}$ fornece um terceiro vetor, denotado por $\vec{\boldsymbol{u}}$.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.48\textwidth]{figure/rotor.png}
+		%\captionsetup{width=16cm}
+		\caption{\centering Deslocamento linear infinitesimal $d\vec{\boldsymbol{r}}$ do vetor $\vec{\boldsymbol{r}}$ relativo a uma rotação $d\vec{\boldsymbol{\theta}}$.}
+		\label{fig:rotor}
+	\end{figure}
+
+	Conforme a Fig. \ref{fig:rotor}, o referencial absoluto é definido como qualquer ponto fixo do dispositivo, enquanto o sistema relativo localiza-se no eixo do rotor, cujo único movimento é o de rotação em relação ao ponto fixo\footnote{Conclui-se que $\frac{d\mathbf{j}'}{dt}=\vec{\boldsymbol{\omega}}\times \mathbf{j}'=0$.}.
+	
+	Visto que não ocorre movimento translacional do referencial relativo em relação ao absoluto, tem-se que
+	\begin{equation*}
+		\frac{d\vec{\boldsymbol{R}}_0}{dt}=\vec{\boldsymbol{c}_0}=0.
+	\end{equation*}
+	Assim, a Eq. \ref{eq:derivada-r-3} reduz-se a
+	\begin{equation}
+		\vec{\boldsymbol{c}}=\vec{\boldsymbol{w}}+\vec{\boldsymbol{u}},
+	\end{equation}
+	onde $\vec{\boldsymbol{u}}$ é a velocidade tangencial em relação à circunferência descrita pelo rotor (Fig. \ref{fig:velocidade-angular-2}); $\vec{\boldsymbol{w}}$ é a velocidade da partícula $P$ em relação ao referencial relativo\footnote{$\vec{\boldsymbol{w}}$, em certa análise, é o modo como as pás \textit{enxergam} a partícula $P$ se afastando da origem $O'$ até a extremidade, linearmente.}; $\vec{\boldsymbol{c}}$ representa a velocidade da partícula $P$ em relação ao referencial absoluto.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.48\textwidth]{figure/velocidade-angular-3.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Velocidade tangencial $\vec{\boldsymbol{u}}$, o qual descreve uma circunferência de raio $\vec{\boldsymbol{r}}$.}
+		\label{fig:velocidade-angular-2}
+	\end{figure}
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
