@@ -247,9 +247,9 @@
 	\end{enumerate}
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.48\textwidth]{figure/rotor-inf.jpeg}
+		\includegraphics[width=0.42\textwidth]{figure/rotor-inf.jpeg}
 		%\captionsetup{width=16cm}
-		\caption{\centering Velocidade tangencial $\vec{\boldsymbol{u}}$, o qual descreve uma circunferência de raio $\vec{\boldsymbol{r}}$.}
+		\caption{\centering Descrição da linha de corrente $\Psi$ em escoamento unidimensional e suas componentes de velocidade, sob a hipótese de pás infinitas.}
 		\label{fig:rotor-inf-1}
 	\end{figure}
 	O vetor velocidade relativa $\vec{\textbf{w}}$ descreve o movimento relativo da partícula em relação ao eixo do rotor ao longo da linha de corrente $\Psi$ (Fig. \ref{fig:rotor-inf-1}).
@@ -264,7 +264,7 @@
 		\centering
 		\includegraphics[width=0.48\textwidth]{figure/rotor-inf-2.jpeg}
 		%\captionsetup{width=16cm}
-		\caption{\centering Velocidade tangencial $\vec{\boldsymbol{u}}$, o qual descreve uma circunferência de raio $\vec{\boldsymbol{r}}$.}
+		\caption{\centering Componentes de entrada e saída do vetor velocidade absoluta $\vec{\boldsymbol{c}}$ para uma máquina de fluxo geradora.}
 		\label{fig:rotor-inf-2}
 	\end{figure}
 
@@ -273,7 +273,7 @@
 	Isto, pois, enquanto uma partícula desloca-se até o ponto $\boldsymbol{E}$, ao mesmo tempo ocupará a posição $\boldsymbol{E'}$ em relação ao referencial fixo. Além disso, $\boldsymbol{EE'}$ será a trajetória do ponto $\boldsymbol{E}$ do rotor no mesmo intervalo $\Delta t$ empregado pela partícula fluida para ir de $\boldsymbol{A}$ até $\boldsymbol{E}$, de forma que $\theta=\omega\, \Delta t$\footnote{$\boldsymbol{AE}$, em termos infinitesimais, é o deslocamento de acordo com o referencial relativo. $\boldsymbol{EE'}$ é o deslocamento que ocorre em consequência do movimento de rotação do rotor, $d\vec{\boldsymbol{\theta}}=\vec{\boldsymbol{\omega}}\, dt$.}.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.48\textwidth]{figure/triangulo-deslocamento.jpeg}
+		\includegraphics[width=0.46\textwidth]{figure/triangulo-deslocamento.jpeg}
 		%\captionsetup{width=16cm}
 		\caption{\centering Velocidade tangencial $\vec{\boldsymbol{u}}$, o qual descreve uma circunferência de raio $\vec{\boldsymbol{r}}$.}
 		\label{fig:triangulo-deslocamento}
@@ -292,18 +292,18 @@
 	\end{obs}
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.48\textwidth]{figure/rotor-motora.jpeg}
+		\includegraphics[width=0.42\textwidth]{figure/rotor-motora.jpeg}
 		%\captionsetup{width=16cm}
-		\caption{\centering Velocidade tangencial $\vec{\boldsymbol{u}}$, o qual descreve uma circunferência de raio $\vec{\boldsymbol{r}}$.}
+		\caption{\centering Componentes de entrada e saída do vetor velocidade absoluta $\vec{\boldsymbol{c}}$ para uma máquina de fluxo motora.}
 		\label{fig:rotor-motora}
 	\end{figure}
 
 	A inclinação das pás de um sistema diretor instalado antes do rotor de uma \textbf{máquina de fluxo motora} estabelecerá a direção com que a velocidade absoluta entrará no rotor (Fig. \ref{fig:rotor-motora}).
 	
-	A Fig. \ref{fig:triangulo-velocidades} representa um triângulo de velocidades genérico que traduz a Eq. \ref{eq:triangulo-velocidades}, destacando duas componentes do vetor velocidade absoluta $\vec{\boldsymbol{c}}$: a componente na direção tangencial $\vec{\boldsymbol{c}_u}$ e a componente medida em um plano meridiano perpendicular a $\vec{\boldsymbol{c}_u}, \vec{\boldsymbol{c}_\text{w}}$.
+	A Fig. \ref{fig:triangulo-velocidades} representa um triângulo de velocidades genérico que traduz a Eq. \ref{eq:triangulo-velocidades}, destacando duas componentes do vetor velocidade absoluta $\vec{\boldsymbol{c}}$: a componente na direção tangencial $\vec{\boldsymbol{c}_u}$ e a componente medida em um plano meridiano perpendicular a $\vec{\boldsymbol{c}_u}, \vec{\boldsymbol{c}_m}$.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.48\textwidth]{figure/triangulo-velocidades.png}
+		\includegraphics[width=0.35\textwidth]{figure/triangulo-velocidades.png}
 		%\captionsetup{width=16cm}
 		\caption{\centering Triângulo de velocidades de uma máquina de fluxo, segundo a Eq. \ref{eq:triangulo-velocidades}.}
 		\label{fig:triangulo-velocidades}
@@ -317,7 +317,49 @@
 	\begin{obs}
 		A componente $\vec{\boldsymbol{c}_u}$ interage diretamente com as pás para produzir ou absorver trabalho, enquanto $\vec{\boldsymbol{c}_m}$ é perpendicular à área de passagem $A$.
 	\end{obs}
-	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.48\textwidth]{figure/area-radial.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Área da seção transversal do rotor perpendicular à componente $\vec{\boldsymbol{c}_m}$, em regime de escoamento radial´.}
+		\label{fig:area-radial}
+	\end{figure}
+
+	Para máquinas radiais (Fig. \ref{fig:area-radial}), $\vec{\boldsymbol{c}_m}$ possui direção radial, enquanto a área $A$ corresponde à área de passagem, desprezando a espessura das pás\footnote{A espessura das pás é desprezível, visto que a condição de infinitas pás pressupõe espessura infinitesimal.}, na superfície lateral de um cilindro, ou seja,
+	\begin{gather*}
+		A_r=2\pi r b\\
+		A_r=\pi D b,
+	\end{gather*}
+	onde $b$ é a altura das pás e $D$ é o diâmetro interno do rotor.
+
+	Para máquinas axiais (Fig. \ref{fig:area-axial}), a componente meridiana tem a direção longitudinal ao eixo do rotor, e a área de passagem é a superfície de uma coroa circular\footnote{O escoamento é totalmente axial, conforme $\alpha\to \pi/2$, visto que $\vec{\boldsymbol{c}}\to \vec{\boldsymbol{c}_m}$ e $\vec{\boldsymbol{c}_u}\to 0$.}.
+	\begin{equation*}
+		A_a=\frac{\pi}{4}({D_e}^2-{D_i}^2)
+	\end{equation*}
+	onde $D_e$ é o diâmetro externo do rotor e $D_i$ é o diâmetro interno.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.3\textwidth]{figure/area-axial.jpeg}
+		%\captionsetup{width=16cm}
+		\caption{\centering Área da seção transversal do rotor perpendicular à componente $\vec{\boldsymbol{c}_m}$, em regime de escoamento axial.}
+		\label{fig:area-axial}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.48\textwidth]{figure/area-misto.png}
+		%\captionsetup{width=16cm}
+		\caption{\centering Superfície lateral de um tronco de cone correspondente à área perpendicular à componente $\vec{\boldsymbol{c}_m}$, em regime de fluxo misto.}
+		\label{fig:area-misto}
+	\end{figure}
+
+	Nas máquinas de fluxo misto (Fig. \ref{fig:area-misto}), a componente $\vec{\boldsymbol{c}_m}$ encontra-se em uma área correspondente à superfície lateral de um tronco de cone (Fig. \ref{fig:area-misto}), onde
+	\begin{equation*}
+		A_d=\pi b\left(\frac{D_i+D_e}{2}\right)
+	\end{equation*}
+	representa a média aritmética entre as áreas das bases, tal que
+	\begin{equation*}
+		A_d=\frac{\pi D_i b+\pi D_e b}{2}.
+	\end{equation*}
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
