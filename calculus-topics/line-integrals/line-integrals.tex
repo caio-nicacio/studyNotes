@@ -1,19 +1,16 @@
 \documentclass[11pt]{article}
 
-% --------------------
-% PACOTES ESSENCIAIS
-% --------------------
-\usepackage[utf8]{inputenc}     % Codificação UTF-8
-\usepackage[T1]{fontenc}        % Fonte com acentuação
-\usepackage[brazil]{babel}      % Idioma português
-\usepackage{amsmath, amssymb}   % Símbolos matemáticos
-\usepackage{graphicx}           % Inserção de imagens
-\usepackage{geometry}           % Margens personalizadas
-\usepackage{fancyhdr}           % Cabeçalhos e rodapés
-\usepackage{enumitem}           % Listas personalizadas
-%\usepackage{physics}            % Notação física e matemática
-\usepackage{hyperref}           % Links no PDF
-\usepackage{multicol}           % Colunas (opcional)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+%\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{siunitx}
 \usepackage{comment}
@@ -24,23 +21,17 @@
 \newtheorem{teorema}{Teorema}
 \newtheorem{exemplo}{Exemplo}
 
-% --------------------
-% CONFIGURAÇÕES
-% --------------------
 \geometry{a4paper, margin=2.5cm}
 
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Integrais de linha}
-\lhead{Caio Magno Mendonça Nicácio}
+\lhead{Caio Nicácio\,\href{https://orcid.org/0009-0009-2877-6170}{\raisebox{-0.2\height}{\includegraphics[height=1.8ex]{../../orcid.pdf}}}}
 \cfoot{\thepage}
 
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
 
-% --------------------
-% INÍCIO DO DOCUMENTO
-% --------------------
 \begin{document}
 	
 	\begin{center}
@@ -111,7 +102,7 @@
 		\end{minipage}
 		\centering
 		%\captionsetup{width=16cm}
-		\caption{\centering Parametrizações $\boldsymbol{\vec{r}}_i$, $i=1,2,\cdots,n$, com mesma projeção no plano $xy$.}
+		\caption{\centering Parametrizações $\boldsymbol{\vec{r}}_i$, $i=1,2,\dots,n$, com mesma projeção no plano $xy$.}
 		\label{fig:curvas-circulo}
 	\end{figure}
 	
@@ -231,7 +222,7 @@
 	
 	\subsection{Integral de linha de segunda espécie sobre uma curva $\gamma$ por partes}
 	
-	Uma curva $\gamma:[a,b]\to \Omega\subseteq \mathbb{R}^n$ se diz classe $C^1$ por partes se for contínua e existirem uma partição $a=t_0<t_1<\cdots<t_n=b$ e curvas $\gamma_i:[t_{i-1},t_i]\to \Omega\subseteq \mathbb{R}^n$, $i=1,2,\cdots,n$, de classe $C^1$, tais que, $\forall t\in \left]t_{i-1}, t_i\right[$, $\gamma(t)=\gamma_i(t)$ (Fig. \ref{fig:gamma-partes}).
+	Uma curva $\gamma:[a,b]\to \Omega\subseteq \mathbb{R}^n$ se diz classe $C^1$ por partes se for contínua e existirem uma partição $a=t_0<t_1<\dots<t_n=b$ e curvas $\gamma_i:[t_{i-1},t_i]\to \Omega\subseteq \mathbb{R}^n$, $i=1,2,\dots,n$, de classe $C^1$, tais que, $\forall t\in \left]t_{i-1}, t_i\right[$, $\gamma(t)=\gamma_i(t)$ (Fig. \ref{fig:gamma-partes}).
 	
 	Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^n \to \mathbb{R}^n$ e seja $\gamma:[a,b]\to \Omega$ uma curva de classe $C^1$ por partes, tem-se
 	\begin{gather*}
@@ -313,14 +304,13 @@
 	O propósito da mudança de parâmetro reside no fato de que, em vez de $t$ ser a variável independente, o seu crescimento irá depender de outro parâmetro, cujo incremento irá contribuir para o incremento de $t$, $\Delta t=g(u_{i+1})-g(u_i)$\footnote{Se $\Delta u$ for suficientemente pequeno, $\Delta t\approx g'(u)\, \Delta u$.}.
 	
 	\begin{exemplo}
-		Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ e sejam $\gamma_1(t)=(t,t^2)$, $t\in [0,1]$ e $\gamma_2(u)=\left(\frac{u}{2},\frac{u^2}{4}\right)$, $u\in [0,2]$ curvas parametrizadas com mesma imagem.
+		Seja $\boldsymbol{\vec{F}}:\Omega \subset \mathbb{R}^2\to \mathbb{R}^2$ e sejam $\gamma_1(t)=(t,t^2)$, $t\in [0,1]$ e $\gamma_2(u)=\left(\frac{u}{2},\frac{u^2}{4}\right)$, $u\in [0,2]$ curvas parametrizadas com mesma imagem. Considere a igualdade
+		\begin{equation*}
+			\int_{\gamma_2}\boldsymbol{\vec{F}}\cdot d\gamma_2=\int_{\gamma_1}\boldsymbol{\vec{F}}\cdot d\gamma_1
+		\end{equation*}
+		e justifique-a.
 	\end{exemplo}
-	Considere a igualdade
-	\begin{equation*}
-		\int_{\gamma_2}\boldsymbol{\vec{F}}\cdot d\gamma_2=\int_{\gamma_1}\boldsymbol{\vec{F}}\cdot d\gamma_1
-	\end{equation*}
-	e justifique-a.
-	
+
 	Para que a igualdade seja satisfeita, ambas as curvas devem ser de classe $C^1$ e suas derivadas contínuas no domínio, assim como $g:[c,d]\to \mathbb{R}$, $g':]c,d[\to \mathbb{R}$.
 	\begin{gather*}
 		\frac{d\gamma_1}{dt}=(1, 2t),\quad \frac{d\gamma_2}{du}=\left(\frac{1}{2}, \frac{u}{2}\right) \\

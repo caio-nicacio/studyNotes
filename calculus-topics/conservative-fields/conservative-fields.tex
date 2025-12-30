@@ -1,6 +1,5 @@
 \documentclass[11pt]{article}
 
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[brazil]{babel}
@@ -28,7 +27,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Campos conservativos}
-\lhead{Caio Nicácio\,\href{https://orcid.org/0009-0009-2877-6170}{\raisebox{-0.2\height}{\includegraphics[height=1.8ex]{orcid.pdf}}}}
+\lhead{Caio Nicácio\,\href{https://orcid.org/0009-0009-2877-6170}{\raisebox{-0.2\height}{\includegraphics[height=1.8ex]{../../orcid.pdf}}}}
 \cfoot{\thepage}
 
 \setlength{\parskip}{0.5em}
@@ -97,7 +96,7 @@
 		\int_{\gamma}\nabla \varphi\cdot d\gamma=g(b)-g(a)\\
 		\int_{\gamma}\nabla \varphi\cdot d\gamma=\varphi(\gamma(b))-\varphi(\gamma(a)).
 	\end{gather*}
-	Na condição de $\gamma:[a,b]\to \Omega$ ser uma curva suave por partes, particiona-se $[a,b]$ em $k$ subintervalos $[t_{i-1},t_i]$, $i=1,2,\dot,k$, e aplica-se o resultado anterior a cada segmento.
+	Na condição de $\gamma:[a,b]\to \Omega$ ser uma curva suave por partes, particiona-se $[a,b]$ em $k$ subintervalos $[t_{i-1},t_i]$, $i=1,2,\dots,k$, e aplica-se o resultado anterior a cada segmento.
 	\begin{align*}
 		\int_{\gamma} \nabla \varphi\cdot d\gamma&=\int_{a}^{b} \nabla \varphi(\gamma(t)\cdot \gamma'(t)\, dt)\\
 		&=\sum_{i=1}^{n}\int_{t_{i-1}}^{t_i}\nabla \varphi(\gamma(t))\cdot \gamma'(t)\, dt\\
@@ -118,7 +117,7 @@
 	\begin{quote}
 		Função escalar cujo gradiente gera um campo vetorial, o qual formaliza a proposição de que o campo vetorial pode ser descrito como a variação espacial de uma grandeza escalar.
 	\end{quote}
-	Seja $\Omega \subset \mathbb{R}^n$ um domínio aberto e seja $\vec{\boldsymbol{F}}:\Omega\to \mathbb{R}^n$ um campo vetorial contínuo. Diz-se que $\varphi:\Omega\to \mathbb{R}$ uma função potencial de $\vec{\boldsymbol{F}}$ se $\nabla \varphi=\vec{\boldsymbol{F}}$, isto é,
+	Seja $\Omega \subset \mathbb{R}^n$ um domínio aberto e seja $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^n \to \mathbb{R}^n$ um campo vetorial contínuo. Diz-se que $\varphi:\Omega\to \mathbb{R}$ é uma função potencial de $\vec{\boldsymbol{F}}$ se $\nabla \varphi=\vec{\boldsymbol{F}}$. Isto é,
 	\begin{equation*}
 		\vec{\boldsymbol{F}}(x_1,x_2,\dots,x_n)=\left(\frac{\partial \varphi}{\partial x_1},\frac{\partial \varphi}{\partial x_2},\dots,\frac{\partial \varphi}{\partial x_n}\right).
 	\end{equation*}

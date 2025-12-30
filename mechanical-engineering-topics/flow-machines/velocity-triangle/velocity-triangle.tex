@@ -1,19 +1,16 @@
 \documentclass[11pt]{article}
 
-% --------------------
-% PACOTES ESSENCIAIS
-% --------------------
-\usepackage[utf8]{inputenc}     % Codificação UTF-8
-\usepackage[T1]{fontenc}        % Fonte com acentuação
-\usepackage[brazil]{babel}      % Idioma português
-\usepackage{amsmath, amssymb}   % Símbolos matemáticos
-\usepackage{graphicx}           % Inserção de imagens
-\usepackage{geometry}           % Margens personalizadas
-\usepackage{fancyhdr}           % Cabeçalhos e rodapés
-\usepackage{enumitem}           % Listas personalizadas
-%\usepackage{physics}            % Notação física e matemática
-\usepackage{hyperref}           % Links no PDF
-\usepackage{multicol}           % Colunas (opcional)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+%\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{siunitx}
 \usepackage{comment}
@@ -24,24 +21,17 @@
 \newtheorem{definicao}{Definição}
 \newtheorem{exemplo}{Exemplo}
 
-
-% --------------------
-% CONFIGURAÇÕES
-% --------------------
 \geometry{a4paper, margin=2.5cm}
 
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Triângulo de velocidades}
-\lhead{Caio Magno Mendonça Nicácio}
+\lhead{Caio Nicácio\,\href{https://orcid.org/0009-0009-2877-6170}{\raisebox{-0.2\height}{\includegraphics[height=1.8ex]{../../../orcid.pdf}}}}
 \cfoot{\thepage}
 
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
 
-% --------------------
-% INÍCIO DO DOCUMENTO
-% --------------------
 \begin{document}
 	
 	\begin{center}
@@ -156,7 +146,7 @@
 	\begin{equation*}
 		\frac{d\vec{\boldsymbol{r}'}}{dt}=\vec{\boldsymbol{\omega}} \times \vec{\boldsymbol{r}'}
 	\end{equation*}
-	que corresponde à velocidade tangencial do vetor $\vec{\boldsymbol{r}}$ que descreve a circunferência no plano, e que está presente na Eq. \ref{eq:derivada-r}.
+	que corresponde à velocidade tangencial do vetor $\vec{\boldsymbol{r}}$ que descreve a circunferência no plano, e que está presente na Eq. \ref{eq:derivada-r-1}.
 	
 	\begin{obs}
 		(Vide Fig. \ref{fig:rotacao-4}) $d\theta$ deve ser suficientemente pequeno para satisfazer $d\vec{\boldsymbol{r}'} \perp  \vec{\boldsymbol{r}}, d\vec{\boldsymbol{\theta}}$; $\alpha\to \pi/2$.
