@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+%\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{comment}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{obs}{Observação}
+\newtheorem{definicao}{Definição}
+\newtheorem{teorema}{Teorema}
+\newtheorem{exemplo}{Exemplo}
+
+\geometry{a4paper, margin=2.5cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Campos conservativos}
+\lhead{Caio Nicácio\,\href{https://orcid.org/0009-0009-2877-6170}{\raisebox{-0.2\height}{\includegraphics[height=1.8ex]{orcid.pdf}}}}
+\cfoot{\thepage}
+
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+	
+	\begin{center}
+		\Large\textbf{CAMPOS CONSERVATIVOS} \\
+		\normalsize
+		Data: \today
+	\end{center}
+	
+	\hrule
+	\vspace{1em}
+	
+	\tableofcontents
+	\newpage
+	
+	\section{Teorema fundamental do cálculo para integrais de linha}
+	\label{sec:tfc}
+	
+	Seja $f:[a,b]\to \mathbb{R}$, $f\in C^1$, uma função diferenciável em $]a,b[$.
+	O primeiro teorema fundamental do cálculo estabelece que
+	\begin{equation*}
+		\int_{a}^{b} f(x)\, dx=F(b)-F(a),
+	\end{equation*}
+	onde $F$ é uma primitiva de $f$.
+	
+	Assim, a integral no intervalo $[a,b]$ é obtida avaliando um das primitivas nos extremos do intervalo.
+	
+	\begin{definicao} \textbf{(Conjunto conexo)}
+		Um conjunto aberto $\Omega\subset \mathbb{R}^n$ é simplesmente conexo, se existe uma curva suave $\gamma:I \to \Omega$ por partes ligado a dois pontos quaisquer de $\Omega$. Logo, $\forall \boldsymbol{a}, \boldsymbol{b}  \in \Omega$, $\exists \gamma:[a,b] \to \Omega \subset \mathbb{R}^n$, tal que $\boldsymbol{a}=\gamma(a)$ e $\boldsymbol{b}=\gamma(b)$.
+	\end{definicao}
+	\begin{definicao} \textbf{(Conjunto desconexo)}
+		Um conjunto aberto $\Omega \subset \mathbb{R}^n$ é dito desconexo se $\Omega$ é a união de dois ou mais conjuntos abertos disjuntos e não vazios, ou seja,
+		\begin{equation*}
+			\Omega=\bigcup_{i \in \Gamma}A_i
+		\end{equation*}
+		com $A_i\cap A_j = \emptyset$, $i \neq j$, em que $\Gamma$ denota um conjunto de índices e $A_i\neq \emptyset$ é aberto $\forall i \in \Gamma$.
+	\end{definicao}
+	\begin{definicao}
+		A integral de linha\footnote{Para informações complementares, clique \href{https://github.com/caio-nicacio/studyNotes/blob/main/calculus-topics/line-integrals/line-integrals.pdf}{aqui}.} $\int_{\gamma} \vec{\boldsymbol{F}}\cdot d\gamma$, $\vec{\boldsymbol{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$ contínuo no conjunto aberto conexo $\Omega$ é independente do caminho se
+		\begin{equation*}
+			\int_{\gamma_1} \vec{\boldsymbol{F}}\cdot d\gamma_1=\int_{\gamma_2} \vec{\boldsymbol{F}}\cdot d\gamma_2=\dots=\int_{\gamma_k} \vec{\boldsymbol{F}}\cdot d\gamma_k,\quad i=1,2,\dots, k,
+		\end{equation*}
+		$\forall \gamma_i:I_i$, $\gamma_i$ fechada.
+	\end{definicao}
+	\begin{teorema}
+		A integral de linha $\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma$ de um campo vetorial contínuo $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^n\to \mathbb{R}^n$ definido sobre um conjunto simplesmente conexo $\Omega$ é independente do caminho se, e somente se, $\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=0$, $\gamma:[a,b]\to \Omega$, $\gamma$ curva fechada.
+	\end{teorema}
+	\begin{teorema} \label{thm:tfc2} \textbf{(Segundo teorema fundamental do cálculo)}
+		Seja $\varphi:\Omega\to \mathbb{R}$ uma função potencial de $\vec{\boldsymbol{F}}$, tal que $\nabla \varphi$ é contínuo em um conjunto aberto simplesmente conexo $\Omega\subset \mathbb{R}^n$. Dada uma curva suave por partes $\gamma:[a,b]\to \Omega$, tem-se que
+		\begin{equation*}
+			\int_{\gamma}\nabla \varphi\cdot d\gamma = \varphi(\gamma(b))-\varphi(\gamma(b)).
+		\end{equation*}
+	\end{teorema}
+	Seja $\gamma:[a,b]\to \Omega$ uma curva suave e seja $\varphi:\Omega\to \mathbb{R}$ função potencial de $\vec{\boldsymbol{F}}$. Define-se a função composta $g(t)=\varphi(\gamma(t))$, $\forall t\in [a,b]$.
+	
+	Pela regra da cadeia, $g'(t)=\nabla \varphi(\gamma(t))\cdot \gamma'(t)$. Além disso, visto que $\gamma$ é suave e $\nabla \varphi$ contínuo, $g'(t)$ é continua.
+	
+	Aplicando o Teorema \ref{thm:tfc2} à função  $g$, conclui-se que
+	\begin{gather*}
+		\int_{\gamma}\nabla \varphi\cdot d\gamma=\int_{a}^{b} \nabla \varphi(\gamma(t))\cdot \gamma'(t)\, dt=\int_{a}^{b} g'(t)\, dt\\
+		\int_{\gamma}\nabla \varphi\cdot d\gamma=g(b)-g(a)\\
+		\int_{\gamma}\nabla \varphi\cdot d\gamma=\varphi(\gamma(b))-\varphi(\gamma(a)).
+	\end{gather*}
+	Na condição de $\gamma:[a,b]\to \Omega$ ser uma curva suave por partes, particiona-se $[a,b]$ em $k$ subintervalos $[t_{i-1},t_i]$, $i=1,2,\dot,k$, e aplica-se o resultado anterior a cada segmento.
+	\begin{align*}
+		\int_{\gamma} \nabla \varphi\cdot d\gamma&=\int_{a}^{b} \nabla \varphi(\gamma(t)\cdot \gamma'(t)\, dt)\\
+		&=\sum_{i=1}^{n}\int_{t_{i-1}}^{t_i}\nabla \varphi(\gamma(t))\cdot \gamma'(t)\, dt\\
+		&=\sum_{i=1}^{n}[\varphi(\gamma(t_i))-\varphi(\gamma(t_{i-1}))]\\
+		&=\varphi(\gamma(t_k))-\varphi(\gamma(t_0))\\
+		\int_{\gamma} \nabla \varphi\cdot d\gamma&=\varphi(\gamma(b))-\varphi(\gamma(a)).
+	\end{align*}
+
+	\section{Campos conservativos}
+	
+	Um campo vetorial $\vec{\boldsymbol{F}}:\Omega \subset \mathbb{R}^n \to \mathbb{R}^n$ denomina-se conservativo se existe um campo escalar diferenciável $\varphi:\Omega \to \mathbb{R}$ tal que
+	\begin{gather*}
+		\nabla \varphi=\vec{\boldsymbol{F}}\\
+		\frac{\partial \varphi}{\partial x}\,\mathbf{i}+\frac{\partial \varphi}{\partial y}\,\mathbf{j}+\frac{\partial \varphi}{\partial z}\,\mathbf{k}=P(x,y,z)\,\mathbf{i}+Q(x,y,z)\,\mathbf{j}+R(x,y,z)\mathbf{k}.
+	\end{gather*}
+
+	\subsection{Função potencial}
+	\begin{quote}
+		Função escalar cujo gradiente gera um campo vetorial, o qual formaliza a proposição de que o campo vetorial pode ser descrito como a variação espacial de uma grandeza escalar.
+	\end{quote}
+	Seja $\Omega \subset \mathbb{R}^n$ um domínio aberto e seja $\vec{\boldsymbol{F}}:\Omega\to \mathbb{R}^n$ um campo vetorial contínuo. Diz-se que $\varphi:\Omega\to \mathbb{R}$ uma função potencial de $\vec{\boldsymbol{F}}$ se $\nabla \varphi=\vec{\boldsymbol{F}}$, isto é,
+	\begin{equation*}
+		\vec{\boldsymbol{F}}(x_1,x_2,\dots,x_n)=\left(\frac{\partial \varphi}{\partial x_1},\frac{\partial \varphi}{\partial x_2},\dots,\frac{\partial \varphi}{\partial x_n}\right).
+	\end{equation*}
+	Nesse caso, $\vec{\boldsymbol{F}}$ é denominado campo conservativo.
+	
+	Consequentemente, se $\vec{\boldsymbol{F}}=\nabla \varphi$, então a integral de linha entre dois pontos $A$ e $B$ é independente do caminho. Logo,
+	\begin{equation*}
+		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\vec{\boldsymbol{r}}=\varphi(B)-\varphi(A),
+	\end{equation*}
+	$\forall\gamma$ suave ligando $A$ e $B$.
+	
+	Em domínios simplesmente conexos, $\vec{\boldsymbol{F}}=\nabla \varphi$ se, e somente se, $\operatorname{rot} \vec{\boldsymbol{F}}=0$.
+	
+	\begin{teorema}
+		Seja $\vec{\boldsymbol{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$, $n=2,3$, um campo vetorial de classe $C^1$ no aberto $\Omega$. Uma condição necessária (mas não suficiente) para $\vec{\boldsymbol{F}}$ ser considerado conservativo é
+		\begin{equation*}
+			\operatorname{rot}\vec{\boldsymbol{F}}=0\, \text{em}\, \Omega.
+		\end{equation*} 
+	\end{teorema}
+	Seja $\vec{\boldsymbol{F}}:\Omega\to \mathbb{R}^3$ um campo conservativo, $\exists\varphi:\Omega\to \mathbb{R}$ tal que $\nabla\varphi$ em $\Omega$, e
+	\begin{equation*}
+		\frac{\partial \varphi}{\partial x}=P(x,y,z),\, \frac{\partial \varphi}{\partial y}=Q(x,y,z),\, \frac{\partial \varphi}{\partial z}=R(x,y,z).
+	\end{equation*}
+	Visto que $\vec{\boldsymbol{F}}\in C^1$, resulta que $\varphi\in C^2$. Logo,
+	\begin{equation*}
+		\frac{\partial^2 \varphi}{\partial x \partial y}=\frac{\partial^2 \varphi}{\partial y \partial x}\quad \text{(Teorema de Schwarz)}.
+	\end{equation*}
+	Segue que
+	\begin{equation*}
+		\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\quad \longrightarrow\quad \frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}=0.
+	\end{equation*}
+	Analogamente,
+	\begin{equation*}
+		\frac{\partial P}{\partial y}=\frac{\partial R}{\partial x}\quad \text{e}\quad \frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y},
+	\end{equation*}
+	em $\Omega$. Logo, $\operatorname{rot}\vec{\boldsymbol{F}}=0$, $\vec{\boldsymbol{F}}:\Omega \subset \mathbb{R}^3$.
+	\begin{obs}
+		A condição é topológica, não dependendo apenas do campo $\vec{\boldsymbol{F}}$, mas do conjunto $\Omega$, no qual deve ser simplesmente conexo para que $\oint \vec{\boldsymbol{F}}\cdot d\gamma=0$.
+	\end{obs}
+	\begin{comment}
+		\begin{figure}[h!]
+			\begin{minipage}[b]{0.48\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{figure/estado-geral-tensao-1.png}
+				\\[-1ex]\small (a)
+				\label{fig:estado-geral-1}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b]{0.48\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{figure/estado-geral-tensao-2.png}
+				\\[-1ex]\small (b)
+				\label{fig:estado-geral-2}
+			\end{minipage}
+			\centering
+			%\captionsetup{width=16cm}
+			\caption{\centering Representação do estado geral de tensões em um ponto $Q$: (a) no sistema de coordenadas original e (b) no sistema resultante de uma rotação em relação ao sistema inicial.}
+			\label{fig:estado-geral}
+		\end{figure}
+	
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=5.5cm]{figure/parametrizacao.jpeg}
+			%\captionsetup{width=16cm}
+			\caption{\centering Parametrização arbitrária $\boldsymbol{\vec{r}}(t)$ cuja imagem é a curva $\gamma(t):[a, b]$.}
+			\label{fig:parametrizacao}
+		\end{figure}
+	\end{comment}
+	
+	%\bibliography{pos-textuais/referencias.bib}
+	
+\end{document}
