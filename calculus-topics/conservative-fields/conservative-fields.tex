@@ -131,7 +131,7 @@
 	
 	Em domínios simplesmente conexos, $\vec{\boldsymbol{F}}=\nabla \varphi$ se, e somente se, $\operatorname{rot} \vec{\boldsymbol{F}}=0$.
 	
-	\begin{teorema}
+	\begin{teorema}\textbf{(Condição necessária, mas não suficiente)}
 		Seja $\vec{\boldsymbol{F}}:\Omega \subset \mathbb{R}^n\to \mathbb{R}^n$, $n=2,3$, um campo vetorial de classe $C^1$ no aberto $\Omega$. Uma condição necessária (mas não suficiente) para $\vec{\boldsymbol{F}}$ ser considerado conservativo é
 		\begin{equation*}
 			\operatorname{rot}\vec{\boldsymbol{F}}=0\, \text{em}\, \Omega.
@@ -154,9 +154,84 @@
 		\frac{\partial P}{\partial y}=\frac{\partial R}{\partial x}\quad \text{e}\quad \frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y},
 	\end{equation*}
 	em $\Omega$. Logo, $\operatorname{rot}\vec{\boldsymbol{F}}=0$, $\vec{\boldsymbol{F}}:\Omega \subset \mathbb{R}^3$.
+	
+	\begin{teorema}\textbf{(Condição necessária e suficiente)}\label{thm:condicao-suficiente}
+		Seja $\Omega\subset \mathbb{R}^n$ um conjunto aberto conexo e seja $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^n\to \mathbb{R}^n$. Então,
+		\begin{equation*}
+			\operatorname{rot}\vec{\boldsymbol{F}}=0\,\text{em}\,\Omega \iff \exists \varphi:\Omega\to \mathbb{R}\,|\,\vec{\boldsymbol{F}}=\nabla \varphi.
+		\end{equation*}
+		Logo, é equivalente afirmar que
+		\begin{enumerate}
+			\item $\vec{\boldsymbol{F}}$ é conservativo;
+			\item a integral de linha de $\vec{\boldsymbol{F}}$ em $\Omega$ independe do caminho $\gamma$;
+			\item $\oint_{\gamma}\vec{\boldsymbol{F}}\cdot d\vec{\boldsymbol{r}}=0$, $\forall\gamma\subset \Omega$.
+		\end{enumerate}
+	\end{teorema}
 	\begin{obs}
-		A condição é topológica, não dependendo apenas do campo $\vec{\boldsymbol{F}}$, mas do conjunto $\Omega$, no qual deve ser simplesmente conexo para que $\oint \vec{\boldsymbol{F}}\cdot d\gamma=0$.
+		A condição $\operatorname{rot}\vec{\boldsymbol{F}}=0$ não é suficiente se $\Omega$ não for simplesmente conexo. Existem campos irrotacionais definidos em domínios com descontinuidades que não admitem potencial global\footnote{Função escalar definida em todo o domínio $\Omega$ do campo vetorial, cuja derivada reproduz o campo em todos os pontos do domínio.}.
 	\end{obs}
+	\begin{obs}
+		A condição é topológica, não dependendo apenas do campo $\vec{\boldsymbol{F}}$, mas do conjunto $\Omega$, no qual deve ser simplesmente conexo para que $\oint_{\gamma} \vec{\boldsymbol{F}}\cdot d\gamma=0$.
+	\end{obs}
+	\begin{obs}
+		Em um domínio $\Omega$ simplesmente conexo, um campo irrotacional $\vec{\boldsymbol{F}}$ é conservativo somente se for satisfeito
+		\begin{equation*}
+			\oint_{\gamma} \vec{\boldsymbol{F}}\cdot d\vec{\boldsymbol{r}}=0,\quad \forall \gamma \subset \Omega.
+		\end{equation*}
+		Caso $\Omega$ seja um conjunto desconexo, não há garantias de que $\vec{\boldsymbol{F}}$ seja conservativo em seu domínio, mesmo que $\operatorname{rot}\vec{\boldsymbol{F}}=0$. Apenas é seguro afirmá-lo, se $\Omega$ for simplesmente conexo e houver potencial escalar $\varphi$ global\footnote{Um potencial global é uma função escalar definida em todo o domínio $\Omega$ do campo vetorial, cuja derivada reproduz o campo em todos os pontos do domínio.}.
+	\end{obs}
+
+	\subsection{Forma diferencial exata}
+	
+	Seja $\vec{\boldsymbol{F}}(x,y)=P(x,y)\,\mathbf{i}+Q(x,y)\,\mathbf{j}$ definido no aberto $\Omega$.
+	\begin{gather*}
+		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\int_{a}^{b}[P(x,y)\,\mathbf{i}+Q(x,y)\,\mathbf{j}]\cdot \left[\frac{dx}{dt}\,\mathbf{i}+\frac{dy}{dt}\,\mathbf{j}\right]\, dt\\
+		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\int_{a}^{b}P(x,y)\,dx+Q(x,y)\,dy
+	\end{gather*}
+	é uma notação para a integral de $\vec{\boldsymbol{F}}$ sobre $\gamma$.
+	\begin{equation*}
+		\int_{a}^{b}P(x,y)\,dx+Q(x,y)\,dy
+	\end{equation*}
+	denota uma forma diferencial exata se $\exists\varphi:\Omega\to \mathbb{R}$ é diferenciável tal que
+	\begin{equation*}
+		\frac{\partial \varphi}{\partial x}=P(x,y)\quad \text{e}\quad \frac{\partial \varphi}{\partial y}=Q(x,y).
+	\end{equation*}
+	A diferencial de uma dada função$\varphi:\Omega\subset \mathbb{R}^2\to \mathbb{R}$ em dado ponto $(x,y)\in \Omega$ é dada por
+	\begin{equation*}
+		d\varphi=\frac{\partial \varphi}{\partial x}(x,y)\, dx+\frac{\partial \varphi}{\partial y}(x,y)\, dy,
+	\end{equation*}
+	onde $\varphi$ denomina-se primitiva de $P(x,y)\,dx+Q(x,y)\,dy$.
+	
+	A forma diferencial implica na existência de um campo escalar diferenciável $\varphi:\Omega\to \mathbb{R}$ tal que, $\forall(x,y)\in \Omega$, a diferencial de $\varphi$ é dada por
+	\begin{equation}
+		d\varphi=P(x,y)\,dx+Q(x,y)\,dy
+	\end{equation}
+	\begin{obs}
+		A forma $P(x,y)\,dx+Q(x,y)\,dy$ é exata se, e somente se, $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^2\to \mathbb{R}^2$ for conservativo, dado o Teorema \ref{thm:condicao-suficiente}.
+	\end{obs}
+	\begin{obs}
+		A proposição pode ser generalizada para $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^n\to \mathbb{R}^n$, se satisfeitas as condições.
+	\end{obs}
+	\subsection{Integral de linha de um campo conservativo}
+	
+	\begin{teorema}
+		Seja $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^n\to \mathbb{R}^n$ um campo vetorial contínuo e conservativo, e seja $\varphi:\Omega\to \mathbb{R}$ uma função potencial para $\vec{\boldsymbol{F}}$ e seja $\gamma:[a,b]\to \Omega$ classe $C^1$. Então,
+		\begin{equation*}
+			\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\int_{\gamma}\nabla \varphi\cdot d\gamma=\varphi(\gamma(b))-\varphi(\gamma(a)).
+		\end{equation*}
+	\end{teorema}
+
+	De fato, se $\vec{\boldsymbol{F}}$ é contínuo, $\varphi\in C^1$.
+	\begin{equation*}
+		\frac{d\varphi}{dt}(\gamma(t))=\nabla\varphi(\gamma(t))\cdot \gamma'(t)=\vec{\boldsymbol{F}}(\gamma(t))\cdot \gamma'(t)
+	\end{equation*}
+	Logo,
+	\begin{gather*}
+		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\int_{\gamma}\vec{\boldsymbol{F}}(\gamma(t))\cdot \gamma'(t)\, dt=\int_{a}^{b}\frac{d\varphi}{dt}(\gamma(t))\, dt\\
+		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\int_{a}^{b}d\varphi(\gamma(t))=\varphi(\gamma(t))\Big|_{a}^{b}\\
+		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\varphi(\gamma(b))-\varphi(\gamma(a)).
+	\end{gather*}
+	Ao calcular a integral de linha, é adequado verificar se o campo vetorial é conservativo ou se a forma diferencial é exata.
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
