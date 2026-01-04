@@ -20,7 +20,7 @@
 \newtheorem{obs}{Observação}
 \newtheorem{definicao}{Definição}
 \newtheorem{teorema}{Teorema}
-\newtheorem{exemplo}{Exemplo}
+\newtheorem{exemplo}{Exemplo}[subsection]
 
 \geometry{a4paper, margin=2.5cm}
 
@@ -137,7 +137,7 @@
 			\operatorname{rot}\vec{\boldsymbol{F}}=0\, \text{em}\, \Omega.
 		\end{equation*} 
 	\end{teorema}
-	Seja $\vec{\boldsymbol{F}}:\Omega\to \mathbb{R}^3$ um campo conservativo, $\exists\varphi:\Omega\to \mathbb{R}$ tal que $\nabla\varphi$ em $\Omega$, e
+	Seja $\vec{\boldsymbol{F}}:\Omega\to \mathbb{R}^3$ um campo conservativo, $\exists\varphi:\Omega\to \mathbb{R}$ tal que $\nabla\varphi=\vec{\boldsymbol{F}}$ em $\Omega$, e
 	\begin{equation*}
 		\frac{\partial \varphi}{\partial x}=P(x,y,z),\, \frac{\partial \varphi}{\partial y}=Q(x,y,z),\, \frac{\partial \varphi}{\partial z}=R(x,y,z).
 	\end{equation*}
@@ -206,9 +206,12 @@
 	\begin{equation}
 		d\varphi=P(x,y)\,dx+Q(x,y)\,dy
 	\end{equation}
-	\begin{obs}
-		A forma $P(x,y)\,dx+Q(x,y)\,dy$ é exata se, e somente se, $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^2\to \mathbb{R}^2$ for conservativo, dado o Teorema \ref{thm:condicao-suficiente}.
-	\end{obs}
+	\begin{teorema}
+		O campo $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^2\to \mathbb{R}^2$ é conservativo se, e somente se, $\exists\varphi:\Omega \to \mathbb{R}$ tal que
+		\begin{equation*}
+			d\varphi=P(x,y)\,dx+Q(x,y)\,dy.
+		\end{equation*}
+	\end{teorema}
 	\begin{obs}
 		A proposição pode ser generalizada para $\vec{\boldsymbol{F}}:\Omega\subset \mathbb{R}^n\to \mathbb{R}^n$, se satisfeitas as condições.
 	\end{obs}
@@ -232,6 +235,130 @@
 		\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=\varphi(\gamma(b))-\varphi(\gamma(a)).
 	\end{gather*}
 	Ao calcular a integral de linha, é adequado verificar se o campo vetorial é conservativo ou se a forma diferencial é exata.
+	
+	\begin{exemplo}
+		Calcule $\int_{\gamma}x\,dx+y\,dy$, onde $\gamma=\{(x,y)=(\arctan t, \arcsin t^3)\,|\, t\in [0,1]\}$.
+		
+		A forma diferencial $\omega=P(x,y)\, dx+Q(x,y)\, dy$ é dita exata em $\Omega$, se $\exists\varphi:\Omega\to \mathbb{R}$, tal que
+		\begin{equation*}
+			d\varphi=\frac{\partial \varphi}{\partial x}\, dx+\frac{\partial \varphi}{\partial y}\, dy.
+		\end{equation*}
+		Se $P,Q\in C^1$ em $\Omega$, e $\Omega$ simplesmente conexo, então $\omega$ é exato se, e somente se,
+		\begin{equation*}
+			\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}.
+		\end{equation*}
+		Verificando a condição de irrotacionalidade,
+		\begin{equation*}
+			\frac{\partial P}{\partial y}=\frac{\partial}{\partial y}\,x=0=\frac{\partial}{\partial x}\, y=\frac{\partial Q}{\partial x}.
+		\end{equation*}
+		Logo, $\omega$ é exata em $\Omega\subset \mathbb{R}^2$.
+		Da expressão, tem-se que
+		\begin{equation*}
+			\frac{\partial \varphi}{\varphi x}=x.
+		\end{equation*}
+		Assim,
+		\begin{equation*}
+			\varphi(x,y)=\int x\,dx + g(y)=\frac{x^2}{2} + g(y).
+		\end{equation*}
+		Derivando $\varphi$ em relação a $y$, tal que $\frac{\partial \varphi}{\partial y}=Q(x,y)$,
+		\begin{align*}
+			\frac{\partial}{\partial y}\, \frac{x^2}{2}+g'(y)=y \quad\longrightarrow\quad g'(y)&=y\\
+			\int g'(y)\, dy&=\int y\, dy\\
+			g(y)&=\frac{y^2}{2}+C.
+		\end{align*}
+		Logo, 
+		\begin{equation*}
+			\varphi=\frac{x^2+y^2}{2}+C.
+		\end{equation*}
+		Portanto,
+		\begin{equation*}
+			\int_{\gamma}x\,dx+y\,dy=\int_{\gamma}d\varphi=\int_{\gamma(0)=(0,0)}^{\gamma(1)=\left(\frac{\pi}{4},\sin 1\right)}d\left(\frac{x^2+y^2}{2}+C\right)=\frac{x^2+y^2}{2}\Big|_{\gamma(0)=(0,0)}^{\gamma(1)=\left(\frac{\pi}{4},\sin 1\right)}.
+		\end{equation*}
+		Ou seja,
+		\begin{equation*}
+			\int_{\gamma}x\,dx+y\,dy=\frac{\pi^2+16\, \sin^2 1}{32}.
+		\end{equation*}
+	\end{exemplo}
+	
+	\begin{exemplo}
+		Calcule $\int_{\gamma} \vec{\boldsymbol{F}}\cdot d\gamma$, onde
+		\begin{equation*}
+			\vec{\boldsymbol{F}}(x,y)=\frac{x}{x^2+y^2}\, \mathbf{i}+\frac{y}{x^2+y^2}\,\mathbf{j}
+		\end{equation*}
+		e $\gamma:[a,b]\to \mathbb{R}^2\setminus \{(0,0)\}$ é uma curva $C^1$ por partes e fechada.
+		\begin{gather*}
+			\int_{\gamma} \vec{\boldsymbol{F}}\cdot d\gamma=\int_{\gamma}\left[P(x,y)\,\mathbf{i}+Q(x,y)\,\mathbf{j}\right]\cdot \left[\frac{dx}{dt}\,\mathbf{i}+\frac{dy}{dt}\,\mathbf{j}\right]\, dt\\
+			\int_{\gamma} \vec{\boldsymbol{F}}\cdot d\gamma=\int_{\gamma}P(x,y)\, dx+Q(x,y)\, dy
+		\end{gather*}
+		Verificando a condição de irrotacionalidade, tem-se que
+		\begin{gather*}
+			\frac{\partial P}{\partial y}=\frac{\partial}{\partial y}\left(\frac{x}{x^2+y^2}\right)=\frac{2xy}{(x^2+y^2)^2}\\
+			\frac{\partial Q}{\partial x}=\frac{\partial}{\partial x}\left(\frac{y}{x^2+y^2}\right)=\frac{2xy}{(x^2+y^2)^2}\\
+			\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x},
+			\quad\operatorname{rot}\vec{\boldsymbol{F}}=0
+		\end{gather*}
+		Se $\vec{\boldsymbol{F}}$ é conservativo, $\exists\varphi:\Omega\to \mathbb{R}$, tal que $\nabla\varphi=\vec{\boldsymbol{F}}$.
+		\begin{align*}
+			\frac{\partial \varphi}{\partial x}=P(x,y) \quad\longrightarrow\quad \varphi(x,y)&=\int \frac{x}{x^2+y^2}\,dx + g(y)\\
+			&=\frac{1}{2}\int\frac{du}{u} + g(y),\quad u=x^2+y^2,\quad \frac{du}{u}=x\,dx\\
+			\varphi(x,y)&=\frac{1}{2}\ln |x^2+y^2| + g(y)
+		\end{align*}
+		Derivando $\varphi$ em relação a y, tem-se
+		\begin{align*}
+			\frac{\partial \varphi}{\partial y}=Q(x,y) \quad\longrightarrow\quad \frac{\partial}{\partial y}\left(\frac{1}{2}\ln |x^2+y^2|\right)+g'(y)&=\frac{y}{x^2+y^2}\\
+			\frac{1}{2}\cdot\frac{\partial}{\partial}\ln|u|\cdot\frac{\partial}{\partial y}(x^2+y^2)+g'(y)&=\frac{y}{x^2+y^2}, \quad u=x^2+y^2\\
+			\frac{1}{2(x^2+y^2)}\,2y+g'(y)&=\frac{y}{x^2+y^2}\\
+			g'(y)&=\frac{y}{x^2+y^2}-\frac{y}{x^2+y^2}\\
+			g'(y)&=0 \quad\longrightarrow\quad g(y)=0
+		\end{align*}
+		Assim,
+		\begin{equation*}
+			\varphi(x,y)=\frac{1}{2}\ln |x^2+y^2|+C.
+		\end{equation*}
+		Visto que $\vec{\boldsymbol{F}}$ é conservativo e $\exists\varphi:\Omega \to \mathbb{R}$, tal que $\nabla\varphi=\vec{\boldsymbol{F}}$, e $\gamma$ uma curva fechada,
+		\begin{equation*}
+			\oint_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma=0.
+		\end{equation*}
+	\end{exemplo}
+
+	\begin{exemplo}
+		\textbf{(Campo não conservativo irrotacional)}
+		
+		Seja
+		\begin{equation*}
+			\vec{\boldsymbol{F}}=-\frac{y}{x^2+y^2}\,\mathbf{i}+\frac{x}{x^2+y^2}\,\mathbf{j},\quad(x,y)\neq (0,0)
+		\end{equation*}
+		Verificando a condição de irrotacionalidade, obtêm-se
+		\begin{align*}
+			\frac{\partial P}{\partial y}=\frac{\partial}{\partial y}\left(-\frac{y}{x^2+y^2}\right)&=\frac{\partial}{\partial y}(-y(x^2+y^2)^{-1})\\
+			&=\frac{\partial}{\partial y}(-y)\cdot(x^2+y^2)^{-1}+\frac{\partial}{\partial y}(x^2+y^2)^{-1}\cdot(-y)\\
+			&=-(x^2+y^2)^{-1}-y\frac{\partial}{\partial u}u^{-1}\cdot \frac{\partial}{\partial y}(x^2+y^2),\quad u=x^2+y^2\\
+			&=-\frac{1}{x^2+y^2}+\frac{2y^2}{(x^2+y^2)^2}=\frac{-(x^2+y^2)+2y^2}{(x^2+y^2)^2}\\
+			&=\frac{y^2-x^2}{(x^2+y^2)^2}
+		\end{align*}
+		e
+		\begin{align*}
+			\frac{\partial Q}{\partial x}=\frac{\partial}{\partial x}\left(\frac{x}{x^2+y^2}\right)&=\frac{\partial}{\partial x}(x(x^2+y^2)^2)\\
+			&=\frac{\partial}{\partial x}x\cdot (x^2+y^2)^{-1}+\frac{\partial}{\partial y}(x^2+y^2)^{-1}\cdot x\\
+			&=\frac{1}{x^2+y^2}-\frac{\partial}{\partial u}u^{-1}\cdot \frac{\partial}{\partial x}(x^2+y^2)\cdot x,\quad u=x^2+y^2\\
+			&=\frac{1}{x^2+y^2}-\frac{2x^2}{(x^2+y^2)^2}\\
+			&=\frac{y^2-x^2}{(x^2+y^2)^2}
+		\end{align*}
+		Dessa forma,
+		\begin{equation*}
+			\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}=\frac{y^2-x^2}{(x^2+y^2)^2},\quad \operatorname{rot}\vec{\boldsymbol{F}}=0.
+		\end{equation*}
+		Considerando a curva $\gamma(t)=(\cos t,\sin t)$, $t\in [0,2\pi]$,
+		\begin{align*}
+			\int_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma&=\int_{\gamma}-\frac{y}{x^2+y^2}\,dx+\frac{x}{x^2+y^2}\,dy\\
+			&=-y\int_{\gamma(0)=(1,0)}^{\gamma(1)=(\cos 1,\sin 1)}\frac{1}{x^2+y^2}\, dx+x\int_{\gamma(0)=(1,0)}^{\gamma(1)=(\cos 1,\sin 1)}\frac{1}{x^2+y^2}\,dy\\
+			&=\frac{2}{3}yx^3-yx^3-xy^3\Big|_{\gamma(0)=(1,0)}^{\gamma(1)=(\cos 1,\sin 1)}+xy^3+yx^3-\frac{2}{3}xy^3\Big|_{\gamma(0)=(1,0)}^{\gamma(1)=(\cos 1,\sin 1)},
+		\end{align*}
+		em que
+		\begin{equation*}
+			\oint_{\gamma}\vec{\boldsymbol{F}}\cdot d\gamma\neq 0.
+		\end{equation*}
+	\end{exemplo}
 	\begin{comment}
 		\begin{figure}[h!]
 			\begin{minipage}[b]{0.48\textwidth}
